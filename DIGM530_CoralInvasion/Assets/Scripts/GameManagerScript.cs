@@ -55,8 +55,10 @@ public class GameManagerScript : MonoBehaviour {
     public void LoseGame()
     {
         if (gameHasEnded == false)
+        {
             gameHasEnded = true;
-        SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void RestartGame()
