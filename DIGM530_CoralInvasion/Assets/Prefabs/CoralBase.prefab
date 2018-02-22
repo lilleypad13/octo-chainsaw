@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212256012220090656}
   - component: {fileID: 61016744353176828}
   - component: {fileID: 114206282674250860}
+  - component: {fileID: 95467613289352862}
   m_Layer: 0
   m_Name: CoralBase
   m_TagString: Base
@@ -67,6 +68,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
+--- !u!95 &95467613289352862
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235015107470802}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29cf2602b1f52f149aefc5b9f9d1aa2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114206282674250860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 10
-  generalEnemeyDamage: 1
+  generalEnemyDamage: 1
 --- !u!212 &212256012220090656
 SpriteRenderer:
   m_ObjectHideFlags: 1
