@@ -17,13 +17,13 @@ public class UIPlayerHealth : MonoBehaviour {
         //baseCoral = GetComponent<BaseCoral>();
         //maxHealth = baseCoral.maxHealth;
         //currentHealth = baseCoral.currentHealth;
-        maxHealth = FindObjectOfType<PlayerController>().maxHealth;
-        currentHealth = FindObjectOfType<PlayerController>().currentHealth;
+        maxHealth = FindObjectOfType<PlayerEvents>().maxHealth;
+        currentHealth = FindObjectOfType<PlayerEvents>().currentHealth;
     }
 
     void Update ()
     {
-        currentHealth = FindObjectOfType<PlayerController>().currentHealth;
+        currentHealth = FindObjectOfType<PlayerEvents>().currentHealth;
         transform.localScale = new Vector3(currentHealth / maxHealth, 1.0f, 1.0f);
         if (currentHealth > maxHealth) // Keeps progress in check (basically stops "increasing" after player has met goal
         {

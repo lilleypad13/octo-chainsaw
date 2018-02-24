@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAIUpdate : MonoBehaviour {
+public class EnemyAIOverall : MonoBehaviour {
 
     //public GameObject targetObject;
     //public Transform target;
