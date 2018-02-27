@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4419926064563648}
   - component: {fileID: 61016744353176828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CoralBase
   m_TagString: Base
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 212176344313366368}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Base
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 10
-  generalEnemyDamage: 1
+  maxHealth: 20
+  generalEnemyDamage: 2
+  generalEnemyProjDamage: 1
 --- !u!212 &212176344313366368
 SpriteRenderer:
   m_ObjectHideFlags: 1

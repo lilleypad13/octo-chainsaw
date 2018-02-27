@@ -5,17 +5,17 @@ using UnityEngine;
 public class CircularSoundProjectileScript : MonoBehaviour {
 
     public float growthSpeed = 1.0f;
-    public float targetScaleFactor = 2.0f;
+    //public float targetScaleFactor = 2.0f;
     public int projectileId;
 
-    private Vector3 targetScale;
+    //private Vector3 targetScale;
     //private float timer;
 
 
     private void Start()
     {
         //timer = 0f;
-        targetScale = new Vector3(targetScaleFactor, targetScaleFactor, targetScaleFactor);
+        //targetScale = new Vector3(targetScaleFactor, targetScaleFactor, targetScaleFactor);
     }
 
     private void Update()
@@ -29,13 +29,13 @@ public class CircularSoundProjectileScript : MonoBehaviour {
         transform.localScale += new Vector3(growthSpeed, growthSpeed, 0f) * Time.deltaTime;
     }
 
-    void IncreaseSize2()
-    {
-        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, growthSpeed * Time.deltaTime);
-        if (transform.localScale == targetScale)
-        {
-            Destroy(gameObject);
-        }
-    }
+    //void IncreaseSize2()
+    //{
+    //    transform.localScale = Vector3.Lerp(transform.localScale, targetScale, growthSpeed * Time.deltaTime);
+    //    if (transform.localScale == targetScale)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
 }

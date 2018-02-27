@@ -7,6 +7,7 @@ public class BaseCoral : MonoBehaviour {
     public int currentHealth;
     public int maxHealth = 10;
     public int generalEnemyDamage = 1;
+    public int generalEnemyProjDamage = 1;
     Animator anim;
     int takeDamageHash = Animator.StringToHash("TakeDamage");
 
@@ -19,6 +20,7 @@ public class BaseCoral : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D coll)
     {
         HitByEnemy(coll);
+        HitByEnemyProjectile(coll);
     }
 
     private void HitByEnemy(Collider2D damagingObject)
@@ -27,6 +29,21 @@ public class BaseCoral : MonoBehaviour {
         {
             currentHealth -= generalEnemyDamage; // Says anytime this object collides with an object tagged "Enemy", the currentHealth of this
             // object will be reduced by the value of generalEnemyDamage
+            Debug.Log("The coral has " + currentHealth + " health left.");
+            anim.SetTrigger(takeDamageHash);
+            if (currentHealth <= 0)
+            {
+                FindObjectOfType<GameManagerScript>().LoseGame();
+            }
+        }
+    }
+
+    private void HitByEnemyProjectile(Collider2D enemyProj)
+    {
+        if (enemyProj.gameObject.CompareTag("EnemyProjectile"))
+        {
+            currentHealth -= generalEnemyProjDamage; // Says anytime this object collides with an object tagged "EnemyProjectile", the currentHealth of this
+            // object will be reduced by the value of generalEnemyProjDamage
             Debug.Log("The coral has " + currentHealth + " health left.");
             anim.SetTrigger(takeDamageHash);
             if (currentHealth <= 0)

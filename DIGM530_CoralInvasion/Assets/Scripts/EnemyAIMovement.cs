@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyAIMovement : MonoBehaviour {
 
-    public float moveSpeed = 2.0f;
+    public float initialMoveSpeed = 2.0f;
+    public float currentMoveSpeed;
     public int rotationSpeed = 2;
 
     private Transform myTransform;
@@ -17,6 +18,7 @@ public class EnemyAIMovement : MonoBehaviour {
 
     void Start()
     {
+        currentMoveSpeed = initialMoveSpeed;
         GameObject go = GameObject.FindGameObjectWithTag("Base");
         target = go.transform;
     }
@@ -33,7 +35,7 @@ public class EnemyAIMovement : MonoBehaviour {
         }
 
         //Move Towards Target
-        myTransform.position += (target.position - myTransform.position).normalized * moveSpeed * Time.deltaTime;
+        myTransform.position += (target.position - myTransform.position).normalized * currentMoveSpeed * Time.deltaTime;
     }
 
 }
