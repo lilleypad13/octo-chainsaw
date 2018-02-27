@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerEvents : MonoBehaviour {
 
     private Animator anim;
-    private SpriteRenderer sr;
+    private AudioSource source;
+    private float vollowRange = .1f;
+    private float volHighRange = 2.0f;
 
+    public AudioClip SoundBurst;
     public bool isInvincible;
     public float timeForInvincibilityFrames = 1.0f;
     public int maxHealth = 5;
@@ -20,12 +23,16 @@ public class PlayerEvents : MonoBehaviour {
     public float reloadTimer;
     public float timeToReload = 1.0f;
 
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     void Start () {
         isInvincible = false;
         projectileIdentifier = 0;
         currentHealth = maxHealth; // Initializes currentHealth as the value set for maxHealth
         anim = this.GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
         reloadTimer = timeToReload; // Circumvents reload time to start the game
 	}
 
@@ -44,6 +51,8 @@ public class PlayerEvents : MonoBehaviour {
         {
             FireRing();
             anim.SetTrigger("PerformAttack");
+            float vol = Random.Range(vollowRange, volHighRange);
+            source.PlayOneShot(SoundBurst, 1F);
             reloadTimer = 0f; // Resets the reloadTimer to start over
         }
         anim.SetFloat("MoveSpeed", movement.magnitude);

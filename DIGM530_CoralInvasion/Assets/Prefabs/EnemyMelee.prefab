@@ -140,8 +140,6 @@ MonoBehaviour:
   damageScalingFactor: 1
   overlapMultiplier: 10
   lastProjectileHitBy: 0
-  inFirstProjectile: 0
-  inSecondProjectile: 0
   numberOfProjectiles: 0
 --- !u!114 &114467897448347870
 MonoBehaviour:
@@ -154,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e70e534f15070f42940bde6396c4427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  initialMoveSpeed: 1.5
+  currentMoveSpeed: 0
   rotationSpeed: 2
 --- !u!212 &212338316615526018
 SpriteRenderer:
