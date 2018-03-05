@@ -10,6 +10,7 @@ TagManager:
   - Test
   - AntiProjectile
   - EnemyProjectile
+  - Obstacles
   layers:
   - Default
   - TransparentFX
