@@ -38,4 +38,13 @@ public class EnemyAIMovement : MonoBehaviour {
         myTransform.position += (target.position - myTransform.position).normalized * currentMoveSpeed * Time.deltaTime;
     }
 
+    //private void Update()
+    //{
+    //    // These are the proper arrangements to translate the raycast setup from the example to our enemies
+    //    //Debug.DrawRay(transform.position - (transform.right / 8), -transform.up * 20, Color.yellow);
+    //    //Debug.DrawRay(transform.position - (transform.right / 8), transform.up * 20, Color.yellow);
+    //    //Debug.DrawRay(transform.position + (transform.up / 8), transform.right * 20, Color.red);
+    //    //Debug.DrawRay(transform.position - (transform.up / 8), transform.right * 20, Color.red);
+    //}
+
 }
