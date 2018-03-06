@@ -196,7 +196,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b269738ca2d8fe247895a87c3a0d5d29, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1cf672882d1e59b47a8626206910e4a7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0580bd1bab81695429593b87e0eb24b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundBurst: {fileID: 8300000, guid: b269738ca2d8fe247895a87c3a0d5d29, type: 3}
+  SoundBurst: {fileID: 8300000, guid: 1cf672882d1e59b47a8626206910e4a7, type: 3}
   isInvincible: 0
   timeForInvincibilityFrames: 1
   maxHealth: 5
