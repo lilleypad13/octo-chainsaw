@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   growthSpeed: 1.5
-  targetScaleFactor: 2
   projectileId: 0
 --- !u!212 &212260484235794468
 SpriteRenderer:
@@ -127,7 +126,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e6c07033b940cdc4a9fcaadab75d9bc3, type: 3}
-  m_Color: {r: 0.74747926, g: 0.5222751, b: 0.8455882, a: 0.366}
+  m_Color: {r: 0.74747926, g: 0.5222751, b: 0.8455882, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
