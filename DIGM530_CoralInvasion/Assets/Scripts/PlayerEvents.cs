@@ -6,8 +6,8 @@ public class PlayerEvents : MonoBehaviour {
 
     private Animator anim;
     private AudioSource source;
-    private float vollowRange = .1f;
-    private float volHighRange = 2.0f;
+    //private float vollowRange = .1f;
+    //private float volHighRange = 2.0f;
 
     public AudioClip SoundBurst;
     public bool isInvincible;
@@ -18,10 +18,13 @@ public class PlayerEvents : MonoBehaviour {
     public float projectileDuration = 2.0f;
     public Transform projectileSpawn;
     public GameObject projectile; //what to shoot
+    public ParticleSystem projectileVisual; // Visual effects for the projectile
     public GameObject antiProjectile; // Secondary ring that serves as "empty space" behind initial circle to create a ring effect
     public float antiProjectileDelay = 1.0f;
     public float reloadTimer;
     public float timeToReload = 1.0f;
+
+    //public ParticleSystem projectileParticle;
 
     private void Awake()
     {
@@ -50,9 +53,10 @@ public class PlayerEvents : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && reloadTimer >= timeToReload) // Player can only fire once timeToReload is met
         {
             FireRing();
+            //FireRingParticle();
             anim.SetTrigger("PerformAttack");
-            float vol = Random.Range(vollowRange, volHighRange);
-            source.PlayOneShot(SoundBurst, 1F);
+            //float vol = Random.Range(vollowRange, volHighRange);
+            source.PlayOneShot(SoundBurst, 1f);
             reloadTimer = 0f; // Resets the reloadTimer to start over
         }
         anim.SetFloat("MoveSpeed", movement.magnitude);
@@ -67,9 +71,21 @@ public class PlayerEvents : MonoBehaviour {
     {
         Vector3 shotPosition = projectileSpawn.position;
         var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
+        var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
+        StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
+        //bullet.GetComponent<CircularSoundProjectileScript>().projectileId = projectileIdentifier; // Assigns projectileId of instantiated bullets with current projectilIdentifier
+        Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed
+        projectileIdentifier++; // Moves to a different projectileIdentifier value so that the next projectile will have a different identifier (may not be necessary)
+    }
+
+    void FireRingParticle()
+    {
+        Vector3 shotPosition = projectileSpawn.position;
+        var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
         StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
         bullet.GetComponent<CircularSoundProjectileScript>().projectileId = projectileIdentifier; // Assigns projectileId of instantiated bullets with current projectilIdentifier
         Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed
+        //projectileParticle.Play();
         projectileIdentifier++; // Moves to a different projectileIdentifier value so that the next projectile will have a different identifier (may not be necessary)
     }
 
