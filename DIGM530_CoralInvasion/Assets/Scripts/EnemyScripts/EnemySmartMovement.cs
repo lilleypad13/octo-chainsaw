@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TEST2 : MonoBehaviour {
+public class EnemySmartMovement : MonoBehaviour {
 
     // Fix a range how early u want your enemy detect the obstacle.
     private int range;

@@ -38,9 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4439136723044588}
   - component: {fileID: 58950983495315700}
-  - component: {fileID: 114467897448347870}
   - component: {fileID: 50847310020491646}
-  - component: {fileID: 114141610198647342}
   - component: {fileID: 114570570210054646}
   m_Layer: 9
   m_Name: EnemyMelee
@@ -126,20 +124,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114141610198647342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1998123281481312}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75418450d7c3c284d95832b019625f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialMoveSpeed: 1
-  currentMoveSpeed: 0
-  rotationSpeed: 5
 --- !u!114 &114310429408068246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,20 +141,6 @@ MonoBehaviour:
   overlapMultiplier: 10
   lastProjectileHitBy: 0
   numberOfProjectiles: 0
---- !u!114 &114467897448347870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1998123281481312}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e70e534f15070f42940bde6396c4427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialMoveSpeed: 1.5
-  currentMoveSpeed: 0
-  rotationSpeed: 2
 --- !u!114 &114570570210054646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc56a596846281b4cafff761f8341627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialMoveSpeed: 1
+  initialMoveSpeed: 1.25
   currentMoveSpeed: 0
   rotationSpeed: 2
   environmentLayer:

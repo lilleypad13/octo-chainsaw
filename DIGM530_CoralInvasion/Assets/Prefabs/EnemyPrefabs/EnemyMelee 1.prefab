@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 58950983495315700}
   - component: {fileID: 114467897448347870}
   - component: {fileID: 50847310020491646}
+  - component: {fileID: 114799063312971282}
   m_Layer: 9
   m_Name: EnemyMelee 1
   m_TagString: Untagged
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998123281481312}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e70e534f15070f42940bde6396c4427, type: 3}
   m_Name: 
@@ -162,6 +163,23 @@ MonoBehaviour:
   chaseRange: 3
   projectile: {fileID: 1055212503281290, guid: b8623eab47bf0ec47822a676fd26ee3f, type: 2}
   projectileForce: 100
+--- !u!114 &114799063312971282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998123281481312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc56a596846281b4cafff761f8341627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialMoveSpeed: 0.75
+  currentMoveSpeed: 0
+  rotationSpeed: 2
+  environmentLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!212 &212338316615526018
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -196,12 +214,12 @@ SpriteRenderer:
   m_SortingLayerID: 1026016091
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a0da863201ea7242bd5ca8dee21ab22, type: 3}
-  m_Color: {r: 0.27205884, g: 0.27205884, b: 0.27205884, a: 1}
+  m_Sprite: {fileID: 21300000, guid: db3ee2930ba0a664ebee8b687a0c2326, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.3, y: 3.4}
+  m_Size: {x: 4.0800004, y: 1.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
