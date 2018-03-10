@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4419926064563648}
   - component: {fileID: 61016744353176828}
-  - component: {fileID: 114329511066189132}
   m_Layer: 10
   m_Name: CoralBase
   m_TagString: Base
@@ -141,19 +140,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114329511066189132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1235015107470802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b3719d26830bd49aa35f772fd5e513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growthSpeed: 0.01
-  winScale: 1.5
 --- !u!114 &114501183509687310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,10 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185495f3f73a82d4799a4036cb683c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  growthSpeed: 0.01
   currentHealth: 0
   maxHealth: 20
   generalEnemyDamage: 2
   generalEnemyProjDamage: 1
+  winScale: 1.5
+  growthLostOnGeneralHit: 0.1
+  growthLostOnProjHit: 0.05
 --- !u!212 &212176344313366368
 SpriteRenderer:
   m_ObjectHideFlags: 1
