@@ -54,7 +54,7 @@ public class EnemyRangedCollisions : MonoBehaviour {
         {
             // Stop enemy once it gets in range of target
             // Need to add a way to get enemy started again for cases of moving targets
-            transform.parent.gameObject.GetComponent<EnemyAIMovement>().currentMoveSpeed = 0;
+            transform.parent.gameObject.GetComponent<EnemySmartMovement>().currentMoveSpeed = 0;
 
             //Turn towards target
             Vector3 targetDir = target.position - transform.position;
