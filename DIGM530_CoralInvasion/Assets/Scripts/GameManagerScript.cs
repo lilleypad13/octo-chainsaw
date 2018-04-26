@@ -28,10 +28,15 @@ public class GameManagerScript : MonoBehaviour {
         {
             gameHasEnded = true;
             Debug.Log("You have won!");
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
 
+    public void CompleteLevel()
+    {
+        level = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(level + 1);
+    }
 
     //public void CompleteLevel()
     //{
@@ -58,14 +63,16 @@ public class GameManagerScript : MonoBehaviour {
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
 
+    // Goes back to main menu now
     public void RestartGame()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(level);
+        //SceneManager.LoadScene(level);
+        SceneManager.LoadScene(0);
         // Will want to replace this with the build index of our "Game Over" screen
     }
 }

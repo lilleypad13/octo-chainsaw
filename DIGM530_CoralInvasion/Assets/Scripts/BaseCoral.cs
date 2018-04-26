@@ -93,7 +93,7 @@ public class BaseCoral : MonoBehaviour {
     {
         if (transform.parent.localScale.x >= winScale) //Only checks scale on the x-axis, but should be the same all around
         {
-            FindObjectOfType<GameManagerScript>().WinGame();
+            FindObjectOfType<GameManagerScript>().CompleteLevel();
         }
     }
 }

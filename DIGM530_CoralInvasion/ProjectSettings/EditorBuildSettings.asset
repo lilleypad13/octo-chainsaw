@@ -6,13 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Coral_Invasion_Menu.unity
-    guid: 753273cd9d48c4d35a97615d133ce189
+    path: Assets/Scenes/Coral_Invasion_MenuUpdate.unity
+    guid: 07afb189e2548e94190cc2a0bd680d4b
   - enabled: 1
     path: Assets/Scenes/Game_Over.unity
     guid: b0bef06293fd749fa81abaac02158791
   - enabled: 1
-    path: Assets/Scenes/LevelBasic.unity
+    path: Assets/Scenes/Level1.unity
+    guid: 8a38124468a31354a83cc0f423e2e5d6
+  - enabled: 1
+    path: Assets/Scenes/CompleteLevel1.unity
+    guid: c888f16addfc3204c86f6768c77cf68a
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 82b25a0b9fb35db41b129f37c132baee
+  - enabled: 1
+    path: Assets/Scenes/CompleteLevel2.unity
+    guid: c2ea8a26f3b6bd84787eda995841a5f4
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
     guid: 566bf246b24725f43bd18c0b549928a6
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity

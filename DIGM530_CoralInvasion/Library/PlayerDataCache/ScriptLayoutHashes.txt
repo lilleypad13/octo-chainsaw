@@ -1,9 +1,15 @@
-WebGL
+WindowsStandalone
 SceneListBegin?
-Assets/Scenes/Coral_Invasion_Menu.unity
+Assets/Scenes/Coral_Invasion_MenuUpdate.unity
 Assets/Scenes/Game_Over.unity
-Assets/Scenes/LevelBasic.unity
+Assets/Scenes/Level1.unity
+Assets/Scenes/CompleteLevel1.unity
+Assets/Scenes/Level2.unity
+Assets/Scenes/CompleteLevel2.unity
+Assets/Scenes/Level3.unity
+Assets/Scenes/WinScreen.unity
 SceneListEnd?
+1d600069e00e95eaaef57fbd6615e6a8 Assembly-CSharp.dll:.TESTEnemySmartAI
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -17,6 +23,8 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 8750230c53fb65b91c54449dba3352e4 Assembly-CSharp.dll:.ProjectileStretch
+0204a96629037fbb320785d4580cf570 Assembly-CSharp.dll:.BarrelScript
+76119242f799591c84bce8d3be04eee2 Assembly-CSharp.dll:.REFSmartAI
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -111,9 +119,10 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-c85c11bfce4c7c922efee6996e2c803c Assembly-CSharp.dll:.BaseCoral
+db4b7fd3ccc3efd6b8be05a2cfe4ec4a Assembly-CSharp.dll:.BaseCoral
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu
-1b54817cc0f906d2a315b903177b3bac Assembly-CSharp.dll:.EnemyAIMovement
+1d600069e00e95eaaef57fbd6615e6a8 Assembly-CSharp.dll:.EnemyAIMovement
+2b5eb550af56894fe80c71f52131afd8 Assembly-CSharp.dll:.TESTRangedEnemy
 d5267eb6dfc69c1b01e49ae4d6ee4e04 Assembly-CSharp.dll:.ExampleBurstPattern
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -126,10 +135,13 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 b3daa22dca2be6ad789dad30b5a24a75 Assembly-CSharp.dll:.ArcCollider2D
 6289e88fb4a6e0a2f50a3f66e2945539 Assembly-CSharp.dll:.StarCollider2D
 696ba84fc2e59b0dbb41f15d0074fec7 Assembly-CSharp.dll:.SpawnEnemyScript
-b4c76ae9dffe137db95c5365452a98ce Assembly-CSharp.dll:.CircularSoundProjectileScript
+de8fd36af7cadc315a7aea20a5d6eb78 Assembly-CSharp.dll:.EnemySmartMovement
+e607a62a2f4a7bedd36c035d97ac4562 Assembly-CSharp.dll:.CircularSoundProjectileScript
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 a389e3ec860066bfc79ce0998216a547 Assembly-CSharp.dll:.PlayerControllerReference
+d137881e0b2c5e28b12416dcb2340e6f Assembly-CSharp.dll:.EnemySubAI
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EnemyProjScript
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -150,7 +162,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-8a15e9aa13f00040fbdf9a4bfce44b42 Assembly-CSharp.dll:.PlayerEvents
+9c520db7cf0b69dd491b04301ad93814 Assembly-CSharp.dll:.PlayerEvents
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 093b3f02eb9d090aebb3de60da83c7db Assembly-CSharp.dll:.ArcCollider2DPoly
 093b3f02eb9d090aebb3de60da83c7db Assembly-CSharp.dll:.ArcCollider2DTest
@@ -164,9 +176,11 @@ f9c1d4d5fdd85b3324d6fba9f81a0021 Assembly-CSharp.dll:.EnemyAIOverall
 fda9fd459d18e1a5c3bce37a1612a988 Assembly-CSharp.dll:.CapsuleCollider2D
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 9205e33934e9105bdb3a67a019b6d85b Assembly-CSharp.dll:.GameManagerScript
+4482d46eaf2f947c228ad9e54ff3f4a9 Assembly-CSharp.dll:.EnemyRangedCollisions
 f2dcfde13b440afc855a1b09877537e5 Assembly-CSharp.dll:.PlayerControllerOldProj
 b26c692579f8f19a7a11eecab6de1a96 Assembly-CSharp.dll:.EllipseCollider2D
 dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.PlayerController
-bb6e289d32239def1174e637a68d0824 Assembly-CSharp.dll:.EnemyCollisions
+ce4130a524458c4784d7808127ff2287 Assembly-CSharp.dll:.EnemyCollisions
+89b19df6dfc551fef41adf5344163b2f Assembly-CSharp.dll:.Space4Sound
 701e09fe0804e758b2a6a23c5762ffab Assembly-CSharp.dll:.RoundedBoxCollider2D
 9a7ca8a487e86343014d079412863969 Assembly-CSharp.dll:.KinBasicProjMovement
