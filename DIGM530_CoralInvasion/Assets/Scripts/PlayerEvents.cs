@@ -23,7 +23,9 @@ public class PlayerEvents : MonoBehaviour {
     public float antiProjectileDelay = 1.0f;
     public float reloadTimer;
     public float timeToReload = 1.0f;
+    public float speedInWaste = 500f;
 
+    private float initialSpeed;
     //public ParticleSystem projectileParticle;
 
     private void Awake()
@@ -37,6 +39,7 @@ public class PlayerEvents : MonoBehaviour {
         currentHealth = maxHealth; // Initializes currentHealth as the value set for maxHealth
         anim = this.GetComponent<Animator>();
         reloadTimer = timeToReload; // Circumvents reload time to start the game
+        initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
 	}
 
     private void Update()
@@ -65,6 +68,12 @@ public class PlayerEvents : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D coll)
     {
         TakeDamage(coll);
+        WhileInToxic(coll);
+    }
+
+    private void OnTriggerExit2D(Collider2D coll)
+    {
+        LeaveToxic(coll);
     }
 
     void FireRing()
@@ -112,6 +121,23 @@ public class PlayerEvents : MonoBehaviour {
             Invoke("ResetInvulnerability", timeForInvincibilityFrames);
         }
     }
+
+    void WhileInToxic(Collider2D waste)
+    {
+        if (waste.gameObject.CompareTag("Obstacles"))
+        {
+            transform.parent.gameObject.GetComponent<PlayerController>().speed = speedInWaste;
+        }
+    }
+
+    void LeaveToxic(Collider2D waste)
+    {
+        if (waste.gameObject.CompareTag("Obstacles"))
+        {
+            transform.parent.gameObject.GetComponent<PlayerController>().speed = initialSpeed;
+        }
+    }
+    
 
     void ResetInvulnerability()
     {

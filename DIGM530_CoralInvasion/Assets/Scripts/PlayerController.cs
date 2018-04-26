@@ -11,12 +11,13 @@ public class PlayerController : MonoBehaviour {
     //private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Vector3 facingDirection;
-
+    private float initialSpeed;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         //sr = GetComponent<SpriteRenderer>();
         facingDirection = transform.localScale;
+        initialSpeed = speed;
 	}
 
     private void FixedUpdate()

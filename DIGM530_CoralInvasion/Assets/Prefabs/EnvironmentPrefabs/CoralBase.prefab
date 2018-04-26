@@ -157,8 +157,8 @@ MonoBehaviour:
   generalEnemyDamage: 2
   generalEnemyProjDamage: 1
   winScale: 1.5
-  growthLostOnGeneralHit: 0.1
-  growthLostOnProjHit: 0.05
+  growthLostOnGeneralHit: 0.075
+  growthLostOnProjHit: 0.025
 --- !u!212 &212176344313366368
 SpriteRenderer:
   m_ObjectHideFlags: 1
