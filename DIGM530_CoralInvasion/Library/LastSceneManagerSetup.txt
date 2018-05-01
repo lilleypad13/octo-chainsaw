@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Level1.unity
+=======
+- path: Assets/Scenes/Alpha_NewGame.unity
+>>>>>>> ResourceScripting_20180501
   isLoaded: 1
   isActive: 1

@@ -329,6 +329,7 @@ MonoBehaviour:
   reloadTimer: 0
   timeToReload: 0.75
   speedInWaste: 300
+  baseObject: {fileID: 0}
 --- !u!114 &114575703541234942
 MonoBehaviour:
   m_ObjectHideFlags: 1
