@@ -12,6 +12,8 @@ TagManager:
   - EnemyProjectile
   - Obstacles
   - Boundary
+  - ResourcePickup
+  - Dropoff
   layers:
   - Default
   - TransparentFX

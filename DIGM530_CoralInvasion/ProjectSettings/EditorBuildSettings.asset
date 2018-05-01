@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 101d662bfbce08b469b6ec6fd00a37b7
+  - enabled: 1
+    path: Assets/Scenes/Alpha_NewGame.unity
+    guid: e681424d504ff8a47bb7e04f68ce7c71
