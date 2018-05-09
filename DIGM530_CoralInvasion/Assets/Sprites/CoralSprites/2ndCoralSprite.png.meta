@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: f7fe2444c323fbf4382de648faefd4f6
-timeCreated: 1525167418
+<<<<<<< HEAD:DIGM530_CoralInvasion/Assets/Sprites/CoralSprites/2ndCoralSprite.png.meta
+guid: 7b0aa0995f7d64e858e82f5c36e73033
+timeCreated: 1524777725
+=======
+guid: 42c8a407cc4e79e47ac11c065453d918
+timeCreated: 1525199063
+>>>>>>> ResourceScripting_20180501:DIGM530_CoralInvasion/Assets/Sprites/CoralSprites/2ndCoralSprite.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

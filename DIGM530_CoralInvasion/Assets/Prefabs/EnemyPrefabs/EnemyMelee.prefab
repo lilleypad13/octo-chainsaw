@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114570570210054646}
   m_Layer: 9
   m_Name: EnemyMelee
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -139,7 +139,6 @@ MonoBehaviour:
   currentHealth: 0
   damageScalingFactor: 1
   overlapMultiplier: 10
-  slowprojectile: {fileID: 0}
   lastProjectileHitBy: 0
   numberOfProjectiles: 0
 --- !u!114 &114570570210054646

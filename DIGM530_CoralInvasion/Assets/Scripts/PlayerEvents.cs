@@ -24,7 +24,9 @@ public class PlayerEvents : MonoBehaviour {
     public float reloadTimer;
     public float timeToReload = 1.0f;
     public float speedInWaste = 500f;
+    public GameObject baseObject;
 
+    private int inventoryResource;
     private float initialSpeed;
     //public ParticleSystem projectileParticle;
 
@@ -40,7 +42,9 @@ public class PlayerEvents : MonoBehaviour {
         anim = this.GetComponent<Animator>();
         reloadTimer = timeToReload; // Circumvents reload time to start the game
         initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
-	}
+        inventoryResource = 0;
+
+    }
 
     private void Update()
     {
@@ -49,24 +53,11 @@ public class PlayerEvents : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
-        float pressdowntimer = 0.0f;
-        bool fireslowmo = false;
-
-        // if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
-        // {
-        //  reloadTimer += Time.deltaTime;
-        //}
-        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
-            //pressdowntimer++;
-            //Debug.Log(pressdowntimer);
+            reloadTimer += Time.deltaTime;
         }
-        if(pressdowntimer == 5.0f)
-        {
-            fireslowmo = true;
-            Debug.Log(fireslowmo);
-        }
-        if (Input.GetButtonDown("Jump"))// && fireslowmo) // Player can only fire once timeToReload is met
+        if (Input.GetKeyDown(KeyCode.Space) && reloadTimer >= timeToReload) // Player can only fire once timeToReload is met
         {
             FireRing();
             //FireRingParticle();
@@ -74,10 +65,6 @@ public class PlayerEvents : MonoBehaviour {
             //float vol = Random.Range(vollowRange, volHighRange);
             source.PlayOneShot(SoundBurst, 1f);
             reloadTimer = 0f; // Resets the reloadTimer to start over
-            pressdowntimer++;
-            Debug.Log(pressdowntimer);
-            //pressdowntimer = 0.0f;
-            //fireslowmo = false;
         }
         anim.SetFloat("MoveSpeed", movement.magnitude);
     }
@@ -86,6 +73,8 @@ public class PlayerEvents : MonoBehaviour {
     {
         TakeDamage(coll);
         WhileInToxic(coll);
+        PickupResource(coll);
+        EnteredDropoffZone(coll);
     }
 
     private void OnTriggerExit2D(Collider2D coll)
@@ -155,6 +144,24 @@ public class PlayerEvents : MonoBehaviour {
         }
     }
     
+    void PickupResource(Collider2D resource)
+    {
+        if (resource.gameObject.CompareTag("ResourcePickup"))
+        {
+            inventoryResource++;
+            Debug.Log("Player is holding " + inventoryResource + " resources.");
+        }
+
+    }
+
+    void EnteredDropoffZone(Collider2D dropoffZone)
+    {
+        if (dropoffZone.gameObject.CompareTag("Dropoff"))
+        {
+            baseObject.GetComponentInChildren<BaseResourceManagement>().resourceStockpile += inventoryResource;
+            inventoryResource = 0;
+        }
+    }
 
     void ResetInvulnerability()
     {
