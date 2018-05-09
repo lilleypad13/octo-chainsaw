@@ -8,6 +8,7 @@ public class EnemyCollisions : MonoBehaviour {
     public float currentHealth;
     public float damageScalingFactor = 1.0f;
     public float overlapMultiplier = 1.0f;
+    public GameObject slowprojectile;
     public float lastProjectileHitBy;
     public int numberOfProjectiles; // Determines how many projectile colliders the enemy is currently within
 
@@ -94,6 +95,11 @@ public class EnemyCollisions : MonoBehaviour {
                 numberOfProjectiles--;
             }
         }
+    }
+
+    void HitBySlowProjectile(Collider2D slow)
+    {
+        if (slow.gameObject.CompareTag("SlowProj"));
     }
 
 }

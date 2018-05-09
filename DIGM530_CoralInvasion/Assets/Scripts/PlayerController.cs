@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-
+    
 
     public float speed = 1.0f;
+    private float Stop = 0.0f;
 
     //private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -20,10 +21,12 @@ public class PlayerController : MonoBehaviour {
         initialSpeed = speed;
 	}
 
-    private void FixedUpdate()
+    private void Update()
     {
-        //if (Input.GetKey(KeyCode.Space) == false)
-        //{
+
+        if (Input.GetKey(KeyCode.Space) == false)
+        {
+
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour {
             {
                 transform.localScale = facingDirection;
             }
-        //}
+        }
     }
-}
+    }
+    
