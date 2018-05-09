@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircularSoundProjectileScript : MonoBehaviour {
 
-    public float deathSpeed = 0.1f;
+public class particlescript01 : MonoBehaviour
+{
+    public float growthSpeed = 1.0f;
     //public float targetScaleFactor = 2.0f;
     public int projectileId;
 
@@ -12,17 +13,21 @@ public class CircularSoundProjectileScript : MonoBehaviour {
     //private float timer;
 
 
-
+    private void Start()
+    {
+        //timer = 0f;
+        //targetScale = new Vector3(targetScaleFactor, targetScaleFactor, targetScaleFactor);
+    }
 
     private void Update()
     {
-        DecreaseSize();
+        IncreaseSize();
     }
 
 
-    void DecreaseSize()
+    void IncreaseSize()
     {
-        transform.localScale -= new Vector3(deathSpeed, deathSpeed, 0f) * Time.deltaTime;
+        transform.localScale += new Vector3(growthSpeed, growthSpeed, 0f) * Time.deltaTime;
     }
 
     //void IncreaseSize2()
@@ -33,5 +38,4 @@ public class CircularSoundProjectileScript : MonoBehaviour {
     //        Destroy(gameObject);
     //    }
     //}
-
 }
