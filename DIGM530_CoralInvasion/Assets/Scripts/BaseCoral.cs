@@ -24,8 +24,8 @@ public class BaseCoral : MonoBehaviour {
 
     private void Update()
     {
-        //IncreaseSize();
-        //WinCondition();
+        IncreaseSize();
+        WinCondition();
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
