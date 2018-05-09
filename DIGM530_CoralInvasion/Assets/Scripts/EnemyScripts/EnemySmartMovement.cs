@@ -87,4 +87,17 @@ public class EnemySmartMovement : MonoBehaviour {
         Debug.DrawRay(transform.position + (transform.up / 8), transform.right * 2, Color.red);
         Debug.DrawRay(transform.position - (transform.up / 8), transform.right * 2, Color.red);
     }
+    
+    public void Slow()
+    {
+        currentMoveSpeed= currentMoveSpeed / 2;
+        Debug.Log(currentMoveSpeed);
+    }
+
+    public void exit()
+    {
+        currentMoveSpeed = currentMoveSpeed * 2;
+        Debug.Log(currentMoveSpeed);
+    }
 }
+
