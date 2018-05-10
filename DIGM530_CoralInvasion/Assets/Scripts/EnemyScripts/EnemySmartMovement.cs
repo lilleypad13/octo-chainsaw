@@ -90,11 +90,11 @@ public class EnemySmartMovement : MonoBehaviour {
     
     public void Slow()
     {
-        currentMoveSpeed= currentMoveSpeed / 2;
-        Debug.Log(currentMoveSpeed);
+        currentMoveSpeed = currentMoveSpeed / 2;
+        Debug.Log("Enemy has been slowed to value: " + currentMoveSpeed);
     }
 
-    public void exit()
+    public void Exit()
     {
         currentMoveSpeed = currentMoveSpeed * 2;
         Debug.Log(currentMoveSpeed);

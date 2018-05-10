@@ -99,7 +99,10 @@ public class EnemyCollisions : MonoBehaviour {
 
     void HitBySlowProjectile(Collider2D slow)
     {
-        if (slow.gameObject.CompareTag("SlowProj"));
+        if (slow.gameObject.CompareTag("SlowProj"))
+        {
+            GetComponentInParent<EnemySmartMovement>().currentMoveSpeed = GetComponentInParent<EnemySmartMovement>().currentMoveSpeed;
+        }
     }
 
 }

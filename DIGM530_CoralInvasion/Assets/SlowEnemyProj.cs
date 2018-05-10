@@ -17,20 +17,21 @@ public class SlowEnemyProj : MonoBehaviour {
  
     private void OnTriggerEnter2D(Collider2D enemy)
     {
-        Debug.Log("Test");
-        if (enemy.gameObject.CompareTag("Enemy"))
+        Debug.Log("I just touched " + enemy.name);
+        if (enemy.transform.parent.GetComponent<EnemySmartMovement>())
         {
-            
-            enemy.gameObject.SendMessage("Slow");
-            
+            enemy.transform.parent.GetComponent<EnemySmartMovement>().Slow();
+            Debug.Log("Slow message has been sent to enemy.");
         }
+        //enemy.gameObject.SendMessage("Slow");
     }
     private void OnTriggerExit2D(Collider2D enemy)
     {
-        Debug.Log("Test2");
-        if (enemy.gameObject.CompareTag("Enemy"))
+        Debug.Log("I just stopped touching " + enemy.name);
+        if (enemy.transform.parent.GetComponent<EnemySmartMovement>())
         {
-            enemy.gameObject.SendMessage("exit");
+            enemy.transform.parent.GetComponent<EnemySmartMovement>().Exit();
+            Debug.Log("Exit message has been sent to enemy.");
         }
     }
 }
