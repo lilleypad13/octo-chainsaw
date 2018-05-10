@@ -24,7 +24,9 @@ public class PlayerEvents : MonoBehaviour {
     public float reloadTimer;
     public float timeToReload = 1.0f;
     public float speedInWaste = 500f;
+    public GameObject baseObject;
 
+    private int inventoryResource;
     private float initialSpeed;
     //public ParticleSystem projectileParticle;
 
@@ -40,7 +42,8 @@ public class PlayerEvents : MonoBehaviour {
         anim = this.GetComponent<Animator>();
         reloadTimer = timeToReload; // Circumvents reload time to start the game
         initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
-	}
+        inventoryResource = 0;
+    }
 
     private void Update()
     {
@@ -86,6 +89,8 @@ public class PlayerEvents : MonoBehaviour {
     {
         TakeDamage(coll);
         WhileInToxic(coll);
+        PickupResource(coll);
+        EnteredDropoffZone(coll);
     }
 
     private void OnTriggerExit2D(Collider2D coll)
@@ -154,7 +159,26 @@ public class PlayerEvents : MonoBehaviour {
             transform.parent.gameObject.GetComponent<PlayerController>().speed = initialSpeed;
         }
     }
-    
+
+    void PickupResource(Collider2D resource)
+    {
+        if (resource.gameObject.CompareTag("ResourcePickup"))
+        {
+            inventoryResource++;
+            Debug.Log("Player is holding " + inventoryResource + " resources.");
+        }
+
+    }
+
+    void EnteredDropoffZone(Collider2D dropoffZone)
+    {
+        if (dropoffZone.gameObject.CompareTag("Dropoff"))
+        {
+            baseObject.GetComponentInChildren<BaseResourceManagement>().resourceStockpile += inventoryResource;
+            inventoryResource = 0;
+        }
+    }
+
 
     void ResetInvulnerability()
     {

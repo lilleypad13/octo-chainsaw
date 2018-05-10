@@ -5,10 +5,11 @@ using UnityEngine;
 public class CircularSoundProjectileScript : MonoBehaviour {
 
     public float deathSpeed = 0.1f;
+    public float growthSpeed = 1.0f;
     //public float targetScaleFactor = 2.0f;
     public int projectileId;
 
-    //private Vector3 targetScale;
+    private Vector3 targetScale;
     //private float timer;
 
 
@@ -16,13 +17,19 @@ public class CircularSoundProjectileScript : MonoBehaviour {
 
     private void Update()
     {
-        DecreaseSize();
+        IncreaseSize();
+        //DecreaseSize();
     }
 
 
     void DecreaseSize()
     {
         transform.localScale -= new Vector3(deathSpeed, deathSpeed, 0f) * Time.deltaTime;
+    }
+
+    void IncreaseSize()
+    {
+        transform.localScale += new Vector3(growthSpeed, growthSpeed, 0f) * Time.deltaTime;
     }
 
     //void IncreaseSize2()

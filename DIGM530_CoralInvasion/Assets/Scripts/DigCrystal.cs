@@ -64,6 +64,7 @@ public class DigCrystal : MonoBehaviour {
         currentHealth -= Time.deltaTime * damageScalingFactor * damageMultiplier;
         if (currentHealth <= 0)
         {
+            Debug.Log("Resource Stone destroyed and resources activated.");
             //Destroy(transform.parent.gameObject);
             transform.GetChild(0).gameObject.SetActive(true);
              transform.GetChild(1).gameObject.SetActive(true);

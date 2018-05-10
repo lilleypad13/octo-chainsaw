@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86927537a8247164cbe9df962f09598f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSpeed: 0.1
   growthSpeed: 1.5
   projectileId: 0
 --- !u!212 &212260484235794468
@@ -104,6 +105,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
