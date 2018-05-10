@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 212338316615526018}
   - component: {fileID: 114642968500760170}
   m_Layer: 9
-  m_Name: Hitbox
+  m_Name: EnemyHitbox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
