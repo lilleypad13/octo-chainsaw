@@ -12,8 +12,11 @@ public class DigCrystal : MonoBehaviour {
     public float lastProjectileHitBy;
     public int numberOfProjectiles; // Determines how many projectile colliders the enemy is currently within
 
+    public Transform crystaltopick;
+
     private SpriteRenderer sr;
     private Color oldColor;
+    private Vector3 originalposition;
 
     void Awake()
     {
@@ -50,12 +53,21 @@ public class DigCrystal : MonoBehaviour {
     // Used for melee enemies that will run directly into the coral base
     void MeleeHitBase(Collider2D baseCoral)
     {
+       
+
         if (baseCoral.gameObject.CompareTag("Base"))
         {
-            //Destroy(transform.parent.gameObject);
-            transform.GetChild(0).gameObject.SetActive(true);
-             transform.GetChild(1).gameObject.SetActive(true);
-              transform.GetChild(2).gameObject.SetActive(true);
+            originalposition = transform.position;
+
+
+           // Debug.Log("1111:"+originalposition);
+
+            for (int i = 0; i < 3; i++)
+            {
+                Instantiate(crystaltopick,originalposition + new Vector3(i * 1.0f, i * 1.0f, 0), Quaternion.identity);
+            }
+            Destroy(transform.gameObject);
+         
         }
     }
 
@@ -64,11 +76,17 @@ public class DigCrystal : MonoBehaviour {
         currentHealth -= Time.deltaTime * damageScalingFactor * damageMultiplier;
         if (currentHealth <= 0)
         {
-            Debug.Log("Resource Stone destroyed and resources activated.");
-            //Destroy(transform.parent.gameObject);
-            transform.GetChild(0).gameObject.SetActive(true);
-             transform.GetChild(1).gameObject.SetActive(true);
-              transform.GetChild(2).gameObject.SetActive(true);
+            originalposition = transform.position;
+            //originalposition = originalposition + new Vector3(1 * 0.5f, 1 * 0.5f, 0);
+           // Debug.Log("22222:" + originalposition);
+          
+            for (int i = 0; i < 3; i++)
+            {
+                //Debug.Log("222222:" + transform.position);
+                Instantiate(crystaltopick, originalposition + new Vector3(i * 1.0f, i * 1.0f, 0), Quaternion.identity);
+            }
+
+            Destroy(transform.gameObject);
         }
     }
 
