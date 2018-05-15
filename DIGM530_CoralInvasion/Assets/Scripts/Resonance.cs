@@ -12,11 +12,16 @@ public class Resonance : MonoBehaviour {
     public float timeToReactivateHitbox = 5.0f;
 
     private BoxCollider2D hitbox;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    private Color currentColor;
     private float reactivateHitboxTimer;
 
     private void Awake()
     {
         hitbox = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     private void Start()
@@ -63,6 +68,7 @@ public class Resonance : MonoBehaviour {
         {
             FireRing();
             hitbox.enabled = false;
+            spriteRenderer.color = Color.red;
             Debug.Log("Hitbox is on = " + hitbox.enabled + " at time stamp " + reactivateHitboxTimer);
             StartCoroutine(TurnOnHitBox());
         }
@@ -72,6 +78,7 @@ public class Resonance : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeToReactivateHitbox);
         hitbox.enabled = true;
+        spriteRenderer.color = originalColor;
         Debug.Log("Hitbox is on = " + hitbox.enabled + " at time stamp " + reactivateHitboxTimer);
     }
 
