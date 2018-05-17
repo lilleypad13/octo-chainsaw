@@ -55,10 +55,10 @@ public class PlayerEvents : MonoBehaviour {
         float pressdowntimer = 0.0f;
         bool fireslowmo = false;
 
-        // if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
-        // {
-        //  reloadTimer += Time.deltaTime;
-        //}
+        if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        {
+            reloadTimer += Time.deltaTime;
+        }
         if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
             //pressdowntimer++;
@@ -69,7 +69,7 @@ public class PlayerEvents : MonoBehaviour {
             fireslowmo = true;
             Debug.Log(fireslowmo);
         }
-        if (Input.GetButtonDown("Jump"))// && fireslowmo) // Player can only fire once timeToReload is met
+        if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
         {
             FireRing();
             //FireRingParticle();
