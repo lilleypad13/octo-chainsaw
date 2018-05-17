@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     private void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space) == false)
+        if (Input.GetButton("Fire3") == false)
         {
 
             float moveHorizontal = Input.GetAxis("Horizontal");
