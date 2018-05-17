@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712435266113592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalPosition: {x: -1.7325532, y: 2.5175853, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4465826343799532}
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 1921250550421792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 21, y: 21, z: 1}
+  m_LocalScale: {x: 42, y: 42, z: 1}
   m_Children: []
   m_Father: {fileID: 4662874904511294}
   m_RootOrder: 2
@@ -336,14 +336,14 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   projectileIdentifier: 0
-  projectileDuration: 3.5
+  projectileDuration: 7
   projectileSpawn: {fileID: 4465826343799532}
   projectile: {fileID: 1572000755352510, guid: 4dd7a163c5748c245a6baf8bbb454602, type: 2}
   projectileVisual: {fileID: 198316456673788678, guid: 2628eaa17ff89244f9e360b741e413a8,
     type: 2}
   antiProjectile: {fileID: 1572000755352510, guid: a4dd5be70ea472e4999f81fb9fa11f1f,
     type: 2}
-  antiProjectileDelay: 1
+  antiProjectileDelay: 1.8
   reloadTimer: 0
   timeToReload: 1
   speedInWaste: 500
