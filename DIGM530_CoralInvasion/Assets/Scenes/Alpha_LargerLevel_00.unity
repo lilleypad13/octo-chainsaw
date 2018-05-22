@@ -207,7 +207,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b51eb2449af0b614ca9b1ecd7acd2e89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -327,7 +327,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -10, y: -8, z: 0}
+  - first: {x: -11, y: -8, z: 0}
     second:
       m_TileIndex: 3
       m_TileSpriteIndex: 4294967295
@@ -336,7 +336,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -10, y: -7, z: 0}
+  - first: {x: -11, y: -7, z: 0}
     second:
       m_TileIndex: 2
       m_TileSpriteIndex: 4294967295
@@ -345,7 +345,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -10, y: -6, z: 0}
+  - first: {x: -13, y: -6, z: 0}
     second:
       m_TileIndex: 5
       m_TileSpriteIndex: 4
