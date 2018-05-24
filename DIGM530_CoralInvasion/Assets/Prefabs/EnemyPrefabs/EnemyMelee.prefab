@@ -216,7 +216,7 @@ MonoBehaviour:
   repathRate: Infinity
   canSearch: 1
   canMove: 1
-  speed: 2
+  speed: 1.25
   enableRotation: 1
   rotationIn2D: 1
   rotationSpeed: 10
