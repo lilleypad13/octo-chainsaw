@@ -8,6 +8,7 @@ public class PlayerEvents : MonoBehaviour {
     private AudioSource source;
     //private float vollowRange = .1f;
     //private float volHighRange = 2.0f;
+    private SpriteRenderer sr;
 
     public AudioClip SoundBurst;
     public bool isInvincible;
@@ -33,6 +34,7 @@ public class PlayerEvents : MonoBehaviour {
     private void Awake()
     {
         source = GetComponent<AudioSource>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Start () {
@@ -41,46 +43,44 @@ public class PlayerEvents : MonoBehaviour {
         currentHealth = maxHealth; // Initializes currentHealth as the value set for maxHealth
         anim = this.GetComponent<Animator>();
         reloadTimer = timeToReload; // Circumvents reload time to start the game
-        initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
+        initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().initialSpeed;
         inventoryResource = 0;
     }
 
     private void Update()
     {
-        // Solely here to be used to set the walking animation
+        // Taking the input here to be used to set the walking animation and determine when sprite should be flipped
+        // Movement takes place in PlayerController script
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
-        float pressdowntimer = 0.0f;
-        bool fireslowmo = false;
+        // Determines which way the sprite renderer should show character facing based on directional input
+        // Need to fix so if moving in non facingDirection, player returns to idle in that direction. Currently it is always
+        // in idle in facingDirection because it is the only state that includes moveHorizontal value of 0.
+        if (moveHorizontal > 0) 
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
 
-        if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        if (reloadTimer < timeToReload)
         {
             reloadTimer += Time.deltaTime;
         }
-        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
-        {
-            //pressdowntimer++;
-            //Debug.Log(pressdowntimer);
-        }
-        if(pressdowntimer == 5.0f)
-        {
-            fireslowmo = true;
-            Debug.Log(fireslowmo);
-        }
-        if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
+
+        // Player can only fire once timeToReload is met
+        if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload)
         {
             FireRing();
-            //FireRingParticle();
             anim.SetTrigger("PerformAttack");
             //float vol = Random.Range(vollowRange, volHighRange);
             source.PlayOneShot(SoundBurst, 1f);
             reloadTimer = 0f; // Resets the reloadTimer to start over
-            pressdowntimer++;
-            Debug.Log(pressdowntimer);
-            //pressdowntimer = 0.0f;
-            //fireslowmo = false;
         }
         anim.SetFloat("MoveSpeed", movement.magnitude);
     }
@@ -102,7 +102,7 @@ public class PlayerEvents : MonoBehaviour {
     {
         Vector3 shotPosition = projectileSpawn.position;
         var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
-        var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
+        Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
         StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
         //bullet.GetComponent<CircularSoundProjectileScript>().projectileId = projectileIdentifier; // Assigns projectileId of instantiated bullets with current projectilIdentifier
         Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed
