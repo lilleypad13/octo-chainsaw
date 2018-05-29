@@ -109,6 +109,7 @@ public class EnemyCollisions : MonoBehaviour {
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
         if (slow.gameObject.CompareTag("SlowProj"));
@@ -117,6 +118,8 @@ public class EnemyCollisions : MonoBehaviour {
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
 >>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
+=======
+>>>>>>> parent of 1666272... Got Radar Working With Enemies
     }
 
 }

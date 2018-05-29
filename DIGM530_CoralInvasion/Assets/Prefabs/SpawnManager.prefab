@@ -65,6 +65,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
   timeBetweenSpawnAttempts: 6
@@ -77,6 +78,9 @@ MonoBehaviour:
 =======
   timeBetweenSpawnAttempts: 1
 >>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
+=======
+  timeBetweenSpawnAttempts: 1
+>>>>>>> parent of 1666272... Got Radar Working With Enemies
   spawnTimeDecrease: 2
   spawnTimeMin: 1
   spawnTimer: 0
