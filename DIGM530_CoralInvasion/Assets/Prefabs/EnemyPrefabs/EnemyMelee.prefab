@@ -23,8 +23,13 @@ GameObject:
   - component: {fileID: 212338316615526018}
   - component: {fileID: 114310429408068246}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: Hitbox
   m_TagString: Enemy
+=======
+  m_Name: EnemyHitbox
+  m_TagString: Untagged
+>>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +45,14 @@ GameObject:
   - component: {fileID: 58950983495315700}
   - component: {fileID: 50847310020491646}
   - component: {fileID: 114570570210054646}
+<<<<<<< HEAD
   m_Layer: 9
+=======
+  - component: {fileID: 114290976444112588}
+  - component: {fileID: 114885351021216400}
+  - component: {fileID: 114764739418934436}
+  m_Layer: 0
+>>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
   m_Name: EnemyMelee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -118,7 +130,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -143,6 +155,39 @@ MonoBehaviour:
   lastProjectileHitBy: 0
   numberOfProjectiles: 0
 --- !u!114 &114570570210054646
+<<<<<<< HEAD
+=======
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998123281481312}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc56a596846281b4cafff761f8341627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialMoveSpeed: 1.25
+  currentMoveSpeed: 0
+  rotationSpeed: 2
+  environmentLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+--- !u!114 &114764739418934436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998123281481312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 0}
+--- !u!114 &114885351021216400
+>>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

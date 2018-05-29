@@ -125,7 +125,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712435266113592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: -1.7325532, y: 2.5175853, z: 0}
+>>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4465826343799532}
@@ -385,6 +389,7 @@ MonoBehaviour:
   xscale: 0
   yscale: 0
   myParticle: {fileID: 0}
+<<<<<<< HEAD
   timer: 0
   timer2: 0
   coolDownPeriodinSeconds: 2.5
@@ -395,6 +400,9 @@ MonoBehaviour:
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
 =======
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+  seconds: 0
+>>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
 --- !u!212 &212101904849182794
 SpriteRenderer:
   m_ObjectHideFlags: 1
