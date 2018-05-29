@@ -28,7 +28,7 @@ public class CircleRend : MonoBehaviour
 
     private void Update()
     {
-        print(timeStamp);
+        //print(timeStamp);
         if (Input.GetButton("Fire3") && timer == true && timeStamp == 0)
         {
 
@@ -56,7 +56,7 @@ public class CircleRend : MonoBehaviour
             timeStamp = coolDownPeriodinSeconds;
 
         }
-        print(timeStamp);
+        //print(timeStamp);
 
         if (timer2 == false)
         {
@@ -64,7 +64,7 @@ public class CircleRend : MonoBehaviour
             if (timeStamp < 0)
             {
                 projectile.SetActive(false);
-                print("power");
+               // print("power");
                 timer = true;
                 timeStamp = 0;
             }

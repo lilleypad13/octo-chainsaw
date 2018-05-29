@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95653875471510920}
   - component: {fileID: 114316382436231382}
   - component: {fileID: 82914843846017810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hitbox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712435266113592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7325532, y: 2.5175853, z: 0}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4465826343799532}
@@ -167,7 +167,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -376,7 +376,9 @@ MonoBehaviour:
   xscale: 0
   yscale: 0
   myParticle: {fileID: 0}
-  seconds: 0
+  timer: 0
+  timer2: 0
+  coolDownPeriodinSeconds: 2.5
 --- !u!212 &212101904849182794
 SpriteRenderer:
   m_ObjectHideFlags: 1
