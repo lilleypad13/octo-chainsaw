@@ -153,12 +153,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc56a596846281b4cafff761f8341627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   initialMoveSpeed: 1.25
   currentMoveSpeed: 0
   rotationSpeed: 2
   environmentLayer:
     serializedVersion: 2
     m_Bits: 2048
+=======
+  version: 2
+  repathRate: Infinity
+  canSearch: 1
+  canMove: 1
+  speed: 1.25
+  enableRotation: 1
+  rotationIn2D: 1
+  rotationSpeed: 10
+  interpolatePathSwitches: 1
+  switchPathInterpolationSpeed: 5
+  targetCompatibility: {fileID: 0}
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 --- !u!212 &212338316615526018
 SpriteRenderer:
   m_ObjectHideFlags: 1

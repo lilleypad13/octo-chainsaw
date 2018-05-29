@@ -99,7 +99,14 @@ public class EnemyCollisions : MonoBehaviour {
 
     void HitBySlowProjectile(Collider2D slow)
     {
+<<<<<<< HEAD
         if (slow.gameObject.CompareTag("SlowProj"));
+=======
+        if (slow.gameObject.CompareTag("SlowProj"))
+        {
+            GetComponentInParent<EnemySmartMovement>().currentMoveSpeed = GetComponentInParent<EnemySmartMovement>().currentMoveSpeed;
+        }
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
     }
 
 }

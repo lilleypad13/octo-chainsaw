@@ -59,6 +59,10 @@ GameObject:
   - component: {fileID: 114575703541234942}
   - component: {fileID: 50367845980657254}
   - component: {fileID: 58771579386603214}
+<<<<<<< HEAD
+=======
+  - component: {fileID: 114684082883257366}
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -312,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0580bd1bab81695429593b87e0eb24b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundBurst: {fileID: 8300000, guid: 1cf672882d1e59b47a8626206910e4a7, type: 3}
+  SoundBurst: {fileID: 0}
   isInvincible: 0
   timeForInvincibilityFrames: 1
   maxHealth: 5
@@ -327,8 +331,14 @@ MonoBehaviour:
     type: 2}
   antiProjectileDelay: 1.5
   reloadTimer: 0
+<<<<<<< HEAD
   timeToReload: 0.75
   speedInWaste: 300
+=======
+  timeToReload: 1
+  speedInWaste: 500
+  baseObject: {fileID: 0}
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 --- !u!114 &114575703541234942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,7 +350,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbbb53ea42473141b733475997522ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   speed: 800
+=======
+  speed: 500
+--- !u!114 &114684082883257366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712435266113592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58ec9aff7347504d9693db5c48b4ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerpos: {fileID: 4662874904511294}
+  projectile: {fileID: 0}
+  xscale: 0
+  yscale: 0
+  myParticle: {fileID: 0}
+  timer: 0
+  timer2: 0
+  coolDownPeriodinSeconds: 2.5
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 --- !u!212 &212101904849182794
 SpriteRenderer:
   m_ObjectHideFlags: 1

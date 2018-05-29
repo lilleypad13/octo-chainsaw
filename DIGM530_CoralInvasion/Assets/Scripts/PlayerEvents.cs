@@ -40,7 +40,12 @@ public class PlayerEvents : MonoBehaviour {
         anim = this.GetComponent<Animator>();
         reloadTimer = timeToReload; // Circumvents reload time to start the game
         initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
+<<<<<<< HEAD
 	}
+=======
+        inventoryResource = 0;
+    }
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 
     private void Update()
     {
@@ -52,6 +57,7 @@ public class PlayerEvents : MonoBehaviour {
         float pressdowntimer = 0.0f;
         bool fireslowmo = false;
 
+<<<<<<< HEAD
         // if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         // {
         //  reloadTimer += Time.deltaTime;
@@ -67,6 +73,23 @@ public class PlayerEvents : MonoBehaviour {
             Debug.Log(fireslowmo);
         }
         if (Input.GetButtonDown("Jump"))// && fireslowmo) // Player can only fire once timeToReload is met
+=======
+        if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        {
+            reloadTimer += Time.deltaTime;
+        }
+        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        {
+            //pressdowntimer++;
+            //Debug.Log(pressdowntimer);
+        }
+        if(pressdowntimer == 5.0f)
+        {
+            fireslowmo = true;
+            Debug.Log(fireslowmo);
+        }
+        if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
         {
             FireRing();
             //FireRingParticle();

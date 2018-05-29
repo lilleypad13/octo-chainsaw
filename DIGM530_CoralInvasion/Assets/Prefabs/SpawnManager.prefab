@@ -61,7 +61,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeToStartSpawning: 1
+<<<<<<< HEAD
   timeBetweenSpawnAttempts: 6
+=======
+  timeBetweenSpawnAttempts: 1
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
   spawnTimeDecrease: 2
   spawnTimeMin: 1
   spawnTimer: 0
