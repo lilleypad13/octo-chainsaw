@@ -18,9 +18,9 @@ public class SlowEnemyProj : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D enemy)
     {
         Debug.Log("I just touched " + enemy.name);
-        if (enemy.transform.parent.GetComponent<EnemySmartMovement>())
+        if (enemy.transform.parent.GetComponent<AILerp>())
         {
-            enemy.transform.parent.GetComponent<EnemySmartMovement>().Slow();
+            enemy.transform.parent.GetComponent<AILerp>().Slow();
             Debug.Log("Slow message has been sent to enemy.");
         }
         //enemy.gameObject.SendMessage("Slow");
@@ -28,10 +28,28 @@ public class SlowEnemyProj : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D enemy)
     {
         Debug.Log("I just stopped touching " + enemy.name);
-        if (enemy.transform.parent.GetComponent<EnemySmartMovement>())
+        if (enemy.transform.parent.GetComponent<AILerp>())
         {
-            enemy.transform.parent.GetComponent<EnemySmartMovement>().Exit();
+            enemy.transform.parent.GetComponent<AILerp>().Exit();
             Debug.Log("Exit message has been sent to enemy.");
         }
     }
+   /* private void OnTriggerEnter2D(Collider2D enemy)
+    {
+        //Debug.Log("Test");
+        if (enemy.gameObject.CompareTag("Enemy"))
+        {
+
+            enemy.gameObject.SendMessage("Slow");
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D enemy)
+    {
+        //Debug.Log("Test2");
+        if (enemy.gameObject.CompareTag("Enemy"))
+        {
+            enemy.gameObject.SendMessage("exit");
+        }
+    }*/
 }
