@@ -100,6 +100,7 @@ public class EnemyCollisions : MonoBehaviour {
     void HitBySlowProjectile(Collider2D slow)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (slow.gameObject.CompareTag("SlowProj"));
 =======
         if (slow.gameObject.CompareTag("SlowProj"))
@@ -107,6 +108,9 @@ public class EnemyCollisions : MonoBehaviour {
             GetComponentInParent<EnemySmartMovement>().currentMoveSpeed = GetComponentInParent<EnemySmartMovement>().currentMoveSpeed;
         }
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+        if (slow.gameObject.CompareTag("SlowProj"));
+>>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
     }
 
 }

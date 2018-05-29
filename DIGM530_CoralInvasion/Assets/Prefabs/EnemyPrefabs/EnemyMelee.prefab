@@ -154,12 +154,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
   initialMoveSpeed: 1.25
   currentMoveSpeed: 0
   rotationSpeed: 2
   environmentLayer:
     serializedVersion: 2
     m_Bits: 2048
+<<<<<<< HEAD
 =======
   version: 2
   repathRate: Infinity
@@ -173,6 +177,8 @@ MonoBehaviour:
   switchPathInterpolationSpeed: 5
   targetCompatibility: {fileID: 0}
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+>>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
 --- !u!212 &212338316615526018
 SpriteRenderer:
   m_ObjectHideFlags: 1

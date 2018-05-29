@@ -41,11 +41,15 @@ public class PlayerEvents : MonoBehaviour {
         reloadTimer = timeToReload; // Circumvents reload time to start the game
         initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 =======
         inventoryResource = 0;
     }
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+	}
+>>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
 
     private void Update()
     {
@@ -58,6 +62,9 @@ public class PlayerEvents : MonoBehaviour {
         bool fireslowmo = false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
         // if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         // {
         //  reloadTimer += Time.deltaTime;
@@ -73,6 +80,7 @@ public class PlayerEvents : MonoBehaviour {
             Debug.Log(fireslowmo);
         }
         if (Input.GetButtonDown("Jump"))// && fireslowmo) // Player can only fire once timeToReload is met
+<<<<<<< HEAD
 =======
         if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
@@ -90,6 +98,8 @@ public class PlayerEvents : MonoBehaviour {
         }
         if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+>>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
         {
             FireRing();
             //FireRingParticle();
