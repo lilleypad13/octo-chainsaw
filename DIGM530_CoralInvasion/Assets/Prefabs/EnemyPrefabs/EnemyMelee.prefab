@@ -29,7 +29,10 @@ GameObject:
 =======
   m_Name: EnemyHitbox
   m_TagString: Untagged
+<<<<<<< HEAD
 >>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
+=======
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,11 +225,14 @@ MonoBehaviour:
   switchPathInterpolationSpeed: 5
   targetCompatibility: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
 =======
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
 --- !u!212 &212338316615526018
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -64,11 +64,14 @@ GameObject:
 =======
   - component: {fileID: 114684082883257366}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
 =======
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -126,10 +129,14 @@ Transform:
   m_GameObject: {fileID: 1712435266113592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
 =======
   m_LocalPosition: {x: -1.7325532, y: 2.5175853, z: 0}
 >>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
+=======
+  m_LocalPosition: {x: -1.7325532, y: 2.5175853, z: 0}
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4465826343799532}
@@ -350,6 +357,7 @@ MonoBehaviour:
   speedInWaste: 500
   baseObject: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
   timeToReload: 0.75
@@ -357,6 +365,8 @@ MonoBehaviour:
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
 =======
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
 --- !u!114 &114575703541234942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +400,7 @@ MonoBehaviour:
   yscale: 0
   myParticle: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   timer: 0
   timer2: 0
   coolDownPeriodinSeconds: 2.5
@@ -403,6 +414,9 @@ MonoBehaviour:
 =======
   seconds: 0
 >>>>>>> parent of b3af22e... changes to AIlerp and circleRend (some issues still exist with slow enemy proj)
+=======
+  seconds: 0
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
 --- !u!212 &212101904849182794
 SpriteRenderer:
   m_ObjectHideFlags: 1

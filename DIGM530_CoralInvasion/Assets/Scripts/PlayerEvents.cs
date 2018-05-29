@@ -43,10 +43,13 @@ public class PlayerEvents : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 =======
 =======
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
         inventoryResource = 0;
     }
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
@@ -64,6 +67,7 @@ public class PlayerEvents : MonoBehaviour {
         float pressdowntimer = 0.0f;
         bool fireslowmo = false;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -89,9 +93,23 @@ public class PlayerEvents : MonoBehaviour {
         if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
 =======
         if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+=======
+        if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
             reloadTimer += Time.deltaTime;
         }
+        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        {
+            //pressdowntimer++;
+            //Debug.Log(pressdowntimer);
+        }
+        if(pressdowntimer == 5.0f)
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
+        {
+            fireslowmo = true;
+            Debug.Log(fireslowmo);
+        }
+<<<<<<< HEAD
         if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
             //pressdowntimer++;
@@ -121,6 +139,9 @@ public class PlayerEvents : MonoBehaviour {
 =======
         if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+=======
+        if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
+>>>>>>> parent of ea168d1... Merge branch 'SteveBranch' into TestBranch
         {
             FireRing();
             //FireRingParticle();
