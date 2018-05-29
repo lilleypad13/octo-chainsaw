@@ -42,8 +42,11 @@ public class PlayerEvents : MonoBehaviour {
         initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 =======
+=======
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
         inventoryResource = 0;
     }
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
@@ -61,6 +64,7 @@ public class PlayerEvents : MonoBehaviour {
         float pressdowntimer = 0.0f;
         bool fireslowmo = false;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -83,9 +87,23 @@ public class PlayerEvents : MonoBehaviour {
 <<<<<<< HEAD
 =======
         if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+=======
+        if (reloadTimer < timeToReload) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
             reloadTimer += Time.deltaTime;
         }
+        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
+        {
+            //pressdowntimer++;
+            //Debug.Log(pressdowntimer);
+        }
+        if(pressdowntimer == 5.0f)
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
+        {
+            fireslowmo = true;
+            Debug.Log(fireslowmo);
+        }
+<<<<<<< HEAD
         if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
         {
             //pressdowntimer++;
@@ -100,6 +118,9 @@ public class PlayerEvents : MonoBehaviour {
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
+=======
+        if (Input.GetButtonDown("Jump") && reloadTimer >= timeToReload) // && fireslowmo) // Player can only fire once timeToReload is met
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
         {
             FireRing();
             //FireRingParticle();

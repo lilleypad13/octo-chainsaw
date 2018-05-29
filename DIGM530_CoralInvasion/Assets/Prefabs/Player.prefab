@@ -63,9 +63,12 @@ GameObject:
 <<<<<<< HEAD
 =======
   - component: {fileID: 114684082883257366}
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
+=======
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -342,11 +345,14 @@ MonoBehaviour:
   timeToReload: 1
   speedInWaste: 500
   baseObject: {fileID: 0}
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
   timeToReload: 0.75
   speedInWaste: 300
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
+=======
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 --- !u!114 &114575703541234942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,10 +388,13 @@ MonoBehaviour:
   timer: 0
   timer2: 0
   coolDownPeriodinSeconds: 2.5
+<<<<<<< HEAD
 >>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 =======
   speed: 800
 >>>>>>> parent of 67e5be6... Merge branch 'TestBranch' into Abishek_branch
+=======
+>>>>>>> parent of 902872b... Merge branch 'TestBranch' of https://github.com/lilleypad13/octo-chainsaw into TestBranch
 --- !u!212 &212101904849182794
 SpriteRenderer:
   m_ObjectHideFlags: 1
