@@ -88,7 +88,7 @@ public class Resonance : MonoBehaviour {
     {
         Vector3 shotPosition = transform.position;
         var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
-        Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
+        var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
         StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
         Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed
         Debug.Log("Projectile fired from resonance object.");
