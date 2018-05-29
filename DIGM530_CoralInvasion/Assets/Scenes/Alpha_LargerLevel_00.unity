@@ -13494,6 +13494,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1712435266113592, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
     type: 2}
   m_PrefabInternal: {fileID: 1011999928}
+--- !u!114 &1176891372 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114479387628705590, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+    type: 2}
+  m_PrefabInternal: {fileID: 1011999928}
+  m_Script: {fileID: 11500000, guid: 9bd6fbb193745ae4aa0132b08f1fbea0, type: 3}
 --- !u!1 &1211188767
 GameObject:
   m_ObjectHideFlags: 0
@@ -17714,10 +17720,11 @@ Prefab:
       propertyPath: spawns.Array.data[5]
       value: 
       objectReference: {fileID: 796835378}
-    - target: {fileID: 1792536329982224, guid: 7a338e640bac4ce4190d4e4aa714dbb5, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114488614917693072, guid: 7a338e640bac4ce4190d4e4aa714dbb5,
+        type: 2}
+      propertyPath: radarScript
+      value: 
+      objectReference: {fileID: 1176891372}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a338e640bac4ce4190d4e4aa714dbb5, type: 2}
   m_IsPrefabParent: 0

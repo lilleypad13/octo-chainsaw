@@ -5,9 +5,9 @@ public class RadarDisplay : MonoBehaviour {
 
     #region Variables
     public GameObject[] trackedObjects;
-    List<GameObject> radarObjects;
+    public List<GameObject> radarObjects;
     public GameObject radarPrefab;
-    List<GameObject> borderObjects;
+    public List<GameObject> borderObjects;
     public float switchDistance = 10f;
     public Transform helpTransform;
 	#endregion
