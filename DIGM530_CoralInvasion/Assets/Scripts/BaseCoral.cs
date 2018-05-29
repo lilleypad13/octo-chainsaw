@@ -22,12 +22,11 @@ public class BaseCoral : MonoBehaviour {
         anim = GetComponent<Animator>();
 	}
 
-    // The win condition for the game has been changed, so these can be disregarded for now.
-    //private void Update()
-    //{
-    //    IncreaseSize();
-    //    WinCondition();
-    //}
+    private void Update()
+    {
+        IncreaseSize();
+        WinCondition();
+    }
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
@@ -39,7 +38,6 @@ public class BaseCoral : MonoBehaviour {
     {
         if (damagingObject.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Scale of base before being hit is: " + transform.parent.localScale);
             currentHealth -= generalEnemyDamage; // Says anytime this object collides with an object tagged "Enemy", the currentHealth of this
             // object will be reduced by the value of generalEnemyDamage
             //Debug.Log("The coral has " + currentHealth + " health left.");
@@ -58,7 +56,6 @@ public class BaseCoral : MonoBehaviour {
             {
                 FindObjectOfType<GameManagerScript>().LoseGame();
             }
-            Debug.Log("New scale of base after hit is: " + transform.parent.localScale);
         }
     }
 

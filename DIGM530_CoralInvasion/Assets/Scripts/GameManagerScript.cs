@@ -28,8 +28,7 @@ public class GameManagerScript : MonoBehaviour {
         {
             gameHasEnded = true;
             Debug.Log("You have won!");
-            //SceneManager.LoadScene(2); // Will want to bring this back once the game is further along.
-            SceneManager.LoadScene(level); // Simply resets the level when you win for now.
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -65,7 +64,6 @@ public class GameManagerScript : MonoBehaviour {
         {
             gameHasEnded = true;
             SceneManager.LoadScene(0);
-            Debug.Log("You have lost.");
         }
     }
 
@@ -76,6 +74,5 @@ public class GameManagerScript : MonoBehaviour {
         //SceneManager.LoadScene(level);
         SceneManager.LoadScene(0);
         // Will want to replace this with the build index of our "Game Over" screen
-        Debug.Log("Game has restarted.");
     }
 }
