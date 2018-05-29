@@ -15,6 +15,8 @@ public class EnemyCollisions : MonoBehaviour {
     private SpriteRenderer sr;
     private Color oldColor;
 
+    public RadarDisplay radarScript;
+
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -23,6 +25,7 @@ public class EnemyCollisions : MonoBehaviour {
 
     void Start()
     {
+        radarScript = GameObject.FindObjectOfType(typeof(RadarDisplay)) as RadarDisplay;
         oldColor = sr.color;
         numberOfProjectiles = 0;
     }
@@ -52,6 +55,7 @@ public class EnemyCollisions : MonoBehaviour {
     {
         if (baseCoral.gameObject.CompareTag("Base"))
         {
+            RemoveAllRadarObjectsFromList();
             Destroy(transform.parent.gameObject);
         }
     }
@@ -61,6 +65,7 @@ public class EnemyCollisions : MonoBehaviour {
         currentHealth -= Time.deltaTime * damageScalingFactor * damageMultiplier;
         if (currentHealth <= 0)
         {
+            RemoveAllRadarObjectsFromList();
             Destroy(transform.parent.gameObject);
         }
     }
@@ -99,7 +104,19 @@ public class EnemyCollisions : MonoBehaviour {
 
     void HitBySlowProjectile(Collider2D slow)
     {
-        if (slow.gameObject.CompareTag("SlowProj"));
+        if (slow.gameObject.CompareTag("SlowProj"))
+        {
+            GetComponentInParent<EnemySmartMovement>().currentMoveSpeed = GetComponentInParent<EnemySmartMovement>().currentMoveSpeed;
+        }
+    }
+
+    void RemoveAllRadarObjectsFromList()
+    {
+        // Removes the corresponding radar objects from the lists in radarScript
+        // Generally necessary before destroying objects to prevent errors with lists
+        radarScript.radarObjects.Remove(transform.parent.GetChild(1).gameObject);
+        radarScript.borderObjects.Remove(transform.parent.GetChild(2).gameObject);
+        Debug.Log("Radar objects removed from list.");
     }
 
 }

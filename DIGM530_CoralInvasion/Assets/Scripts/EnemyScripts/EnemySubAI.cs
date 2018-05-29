@@ -55,7 +55,7 @@ public class EnemySubAI : MonoBehaviour {
     {
         if (Time.time > lastAttackTime + attackDelay)
         {
-            GameObject newProj = Instantiate(projectile, transform.position, transform.rotation);
+            Instantiate(projectile, transform.position, transform.rotation);
             //newProj.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, -projectileForce)); // Throws projectile downward at force equal to projectileForce
             lastAttackTime = Time.time;
         }
