@@ -556,13 +556,13 @@ namespace Pathfinding {
 		}
         public void Slow()
         {
-            Speed = Speed / 2;
+            speed = speed / 2;
             // Debug.Log("the enemy is slowed to:" + currentMoveSpeed);
         }
 
-        public void exit()
+        public void Exit()
         {
-            Speed = Speed * 2;
+            speed = speed * 2;
             //Debug.Log(currentMoveSpeed);
         }
     }
