@@ -12062,11 +12062,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114316382436231382, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+    - target: {fileID: 114971519981724006, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
         type: 2}
-      propertyPath: baseObject
+      propertyPath: trackedObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 1025088307}
+      objectReference: {fileID: 988070186}
+    - target: {fileID: 114971519981724006, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+        type: 2}
+      propertyPath: trackedObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 2089551350}
+    - target: {fileID: 114971519981724006, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+        type: 2}
+      propertyPath: trackedObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 240667796}
+    - target: {fileID: 114971519981724006, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+        type: 2}
+      propertyPath: trackedObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 1351539737}
     - target: {fileID: 114684082883257366, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
         type: 2}
       propertyPath: projectile
@@ -12077,26 +12092,11 @@ Prefab:
       propertyPath: myParticle
       value: 
       objectReference: {fileID: 426563138}
-    - target: {fileID: 212405495300408776, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+    - target: {fileID: 114316382436231382, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
         type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1991937041
-      objectReference: {fileID: 0}
-    - target: {fileID: 212405495300408776, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 212101904849182794, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1991937041
-      objectReference: {fileID: 0}
-    - target: {fileID: 212101904849182794, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: baseObject
+      value: 
+      objectReference: {fileID: 1025088307}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14c26cc21d4dcd74e82d73b4fdc3f026, type: 2}
   m_IsPrefabParent: 0
@@ -13494,6 +13494,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1712435266113592, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
     type: 2}
   m_PrefabInternal: {fileID: 1011999928}
+--- !u!114 &1176891372 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114971519981724006, guid: 14c26cc21d4dcd74e82d73b4fdc3f026,
+    type: 2}
+  m_PrefabInternal: {fileID: 1011999928}
+  m_Script: {fileID: 11500000, guid: 81c34e2c6604128438e4308c48c05cff, type: 3}
 --- !u!1 &1211188767
 GameObject:
   m_ObjectHideFlags: 0
@@ -17714,10 +17720,11 @@ Prefab:
       propertyPath: spawns.Array.data[5]
       value: 
       objectReference: {fileID: 796835378}
-    - target: {fileID: 1792536329982224, guid: 7a338e640bac4ce4190d4e4aa714dbb5, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114488614917693072, guid: 7a338e640bac4ce4190d4e4aa714dbb5,
+        type: 2}
+      propertyPath: radarScript
+      value: 
+      objectReference: {fileID: 1176891372}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a338e640bac4ce4190d4e4aa714dbb5, type: 2}
   m_IsPrefabParent: 0
@@ -18078,7 +18085,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294942719
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

@@ -29,6 +29,7 @@ public class PlayerEvents : MonoBehaviour {
     private int inventoryResource;
     private float initialSpeed;
     //public ParticleSystem projectileParticle;
+    private SpriteRenderer playerSprite;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class PlayerEvents : MonoBehaviour {
         reloadTimer = timeToReload; // Circumvents reload time to start the game
         initialSpeed = transform.parent.gameObject.GetComponent<PlayerController>().speed;
         inventoryResource = 0;
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -81,6 +83,17 @@ public class PlayerEvents : MonoBehaviour {
             Debug.Log(pressdowntimer);
             //pressdowntimer = 0.0f;
             //fireslowmo = false;
+        }
+
+        // Need to fix so if moving in non facingDirection, player returns to idle in that direction. Currently it is always
+        // in idle in facingDirection because it is the only state that includes moveHorizontal value of 0.
+        if (moveHorizontal > 0)
+        {
+            playerSprite.flipX = true;
+        }
+        else
+        {
+            playerSprite.flipX = false;
         }
         anim.SetFloat("MoveSpeed", movement.magnitude);
     }
