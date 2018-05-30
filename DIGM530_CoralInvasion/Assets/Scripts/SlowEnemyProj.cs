@@ -31,7 +31,7 @@ namespace Pathfinding
             }
             //enemy.gameObject.SendMessage("Slow");
         }
-        private void OnTriggerExit2D(Collider2D enemy)
+        /*private void OnTriggerExit2D(Collider2D enemy)
         {
             Debug.Log("I just stopped touching " + enemy.name);
             if (enemy.transform.parent.GetComponent<AILerp>())
