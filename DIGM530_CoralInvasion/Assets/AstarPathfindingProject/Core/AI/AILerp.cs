@@ -554,5 +554,16 @@ namespace Pathfinding {
 			#pragma warning restore 618
 			return 2;
 		}
-	}
+        public void Slow()
+        {
+            speed = speed / 2;
+            // Debug.Log("the enemy is slowed to:" + currentMoveSpeed);
+        }
+
+        public void Exit()
+        {
+            speed = speed * 2;
+            //Debug.Log(currentMoveSpeed);
+        }
+    }
 }
