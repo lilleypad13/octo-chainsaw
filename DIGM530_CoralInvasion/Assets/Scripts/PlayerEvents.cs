@@ -25,6 +25,7 @@ public class PlayerEvents : MonoBehaviour {
     public float timeToReload = 1.0f;
     public float speedInWaste = 500f;
     public GameObject baseObject;
+    public int inventoryMaximum = 3;
 
     private int inventoryResource;
     private float initialSpeed;
@@ -162,10 +163,12 @@ public class PlayerEvents : MonoBehaviour {
 
     void PickupResource(Collider2D resource)
     {
-        if (resource.gameObject.CompareTag("ResourcePickup"))
+        if (resource.gameObject.CompareTag("ResourcePickup") && inventoryResource < inventoryMaximum)
         {
             inventoryResource++;
             Debug.Log("Player is holding " + inventoryResource + " resources.");
+            Destroy(resource.gameObject);
+            Debug.Log("Resource has been destroyed and collected by player.");
         }
 
     }

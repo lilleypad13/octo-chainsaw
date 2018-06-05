@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4115290306766768}
   - component: {fileID: 212722161165133764}
   - component: {fileID: 58119648323869124}
-  - component: {fileID: 114449551100106662}
   m_Layer: 0
   m_Name: Resource
   m_TagString: ResourcePickup
@@ -57,17 +56,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!114 &114449551100106662
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1950181537895354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323b73d68c399c9489d3970c3a6158b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212722161165133764
 SpriteRenderer:
   m_ObjectHideFlags: 1

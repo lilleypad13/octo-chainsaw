@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7f4dd75b2785e41bbe4b4a20947908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growthStep: 0.5
+  growthStep: 0.1
   resourceGoal: 5
 --- !u!114 &114501183509687310
 MonoBehaviour:
