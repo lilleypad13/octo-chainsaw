@@ -61,10 +61,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeToStartSpawning: 1
-  timeBetweenSpawnAttempts: 2
+  timeBetweenSpawnAttempts: 1
   spawnTimeDecrease: 2
   spawnTimeMin: 1
   spawnTimer: 0
   timeToIncreaseSpawnRate: 3
-  radarScript: {fileID: 0}
-  radarPrefab: {fileID: 0}

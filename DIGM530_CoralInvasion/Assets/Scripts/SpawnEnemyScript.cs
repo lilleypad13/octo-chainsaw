@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemyScript : MonoBehaviour
-{
+public class SpawnEnemyScript : MonoBehaviour {
 
     public GameObject enemyObject;
     public Transform[] spawns;
@@ -20,21 +19,15 @@ public class SpawnEnemyScript : MonoBehaviour
     public float spawnTimer;
     public float timeToIncreaseSpawnRate = 10.0f;
 
-    public RadarDisplay radarScript;
-    public GameObject radarPrefab;
-
     //private float spawnRoll;
     //private int count;
 
 
-    void Start()
-    {
+	void Start () {
         //InvokeRepeating("SpawnEnemy", timeToStartSpawning, timeBetweenSpawnAttempts);
         spawnTimer = 0f;
-        radarScript = GameObject.FindObjectOfType(typeof(RadarDisplay)) as RadarDisplay;
-
         InvokeRepeating("SpawnControl", timeToStartSpawning, timeBetweenSpawnAttempts);
-    }
+	}
 
     private void Update()
     {
@@ -64,13 +57,8 @@ public class SpawnEnemyScript : MonoBehaviour
         List<Transform> freeSpawnPoints = new List<Transform>(spawns);  // Creates new array of the transform values of the list of objects dragged onto this script
         int index = Random.Range(0, freeSpawnPoints.Count);  // Picks a random index number between 0 and the size of the previous array (randomly selects transform from array)
         Transform selectedSpawn = freeSpawnPoints[index];
-        GameObject enemyBeingSpawned = Instantiate(enemyObject, selectedSpawn.position, selectedSpawn.rotation);  // Creates an object at the selected position
-
-        // Add spawned enemy to the List in RadarDisplay script
-        radarScript.radarObjects.Add(enemyBeingSpawned.transform.GetChild(1).gameObject);
-        radarScript.borderObjects.Add(enemyBeingSpawned.transform.GetChild(2).gameObject);
-
-
+        Instantiate(enemyObject, selectedSpawn.position, selectedSpawn.rotation);  // Creates an object at the selected position
+        SpawnRateChangerChunkInvoke();
     }
 
     void SpawnRateChanger()
