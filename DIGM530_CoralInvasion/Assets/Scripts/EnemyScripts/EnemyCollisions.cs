@@ -27,7 +27,7 @@ public class EnemyCollisions : MonoBehaviour {
         healthBar = gameObject.transform.GetChild(0);
         startingHealthBarScale = healthBar.localScale;
         currentHealthBarScale = startingHealthBarScale;
-        Debug.Log("Enemy starting health scale: " + startingHealthBarScale);
+        //Debug.Log("Enemy starting health scale: " + startingHealthBarScale);
 
         currentHealth = startingHealth;
     }
@@ -100,7 +100,7 @@ public class EnemyCollisions : MonoBehaviour {
         // the health bar started at to have a similarly proportioned current scale.
         currentHealthBarScale.x = startingHealthBarScale.x * currentHealth / startingHealth;
         healthBar.transform.localScale = currentHealthBarScale;
-        Debug.Log("Scale of the health bar is: " + currentHealthBarScale.x);
+        //Debug.Log("Scale of the health bar is: " + currentHealthBarScale.x);
     }
 
     void HitByProjectile(Collider2D proj)

@@ -18,7 +18,6 @@ public class PlayerEvents : MonoBehaviour {
     public float projectileDuration = 2.0f;
     public Transform projectileSpawn;
     public GameObject projectile; //what to shoot
-    public ParticleSystem projectileVisual; // Visual effects for the projectile
     public GameObject antiProjectile; // Secondary ring that serves as "empty space" behind initial circle to create a ring effect
     public float antiProjectileDelay = 1.0f;
     public float reloadTimer;
@@ -103,7 +102,7 @@ public class PlayerEvents : MonoBehaviour {
     {
         Vector3 shotPosition = projectileSpawn.position;
         var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
-        var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
+        //var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
         StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
         //bullet.GetComponent<CircularSoundProjectileScript>().projectileId = projectileIdentifier; // Assigns projectileId of instantiated bullets with current projectilIdentifier
         Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed

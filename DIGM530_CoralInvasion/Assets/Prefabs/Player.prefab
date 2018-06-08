@@ -338,16 +338,15 @@ MonoBehaviour:
   projectileIdentifier: 0
   projectileDuration: 7
   projectileSpawn: {fileID: 4465826343799532}
-  projectile: {fileID: 1572000755352510, guid: 4dd7a163c5748c245a6baf8bbb454602, type: 2}
-  projectileVisual: {fileID: 198316456673788678, guid: 2628eaa17ff89244f9e360b741e413a8,
+  projectile: {fileID: 1002393257874254, guid: 3ac5624757d9aef4abb0f385ee227b59, type: 2}
+  antiProjectile: {fileID: 1826883740358910, guid: af6f23bf94b75074a98ed4a808884d49,
     type: 2}
-  antiProjectile: {fileID: 1572000755352510, guid: a4dd5be70ea472e4999f81fb9fa11f1f,
-    type: 2}
-  antiProjectileDelay: 1.8
+  antiProjectileDelay: 2
   reloadTimer: 0
   timeToReload: 1
   speedInWaste: 500
   baseObject: {fileID: 0}
+  inventoryMaximum: 3
 --- !u!114 &114575703541234942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -376,7 +375,9 @@ MonoBehaviour:
   xscale: 0
   yscale: 0
   myParticle: {fileID: 0}
-  seconds: 0
+  timer: 0
+  timer2: 0
+  coolDownPeriodinSeconds: 2.5
 --- !u!212 &212101904849182794
 SpriteRenderer:
   m_ObjectHideFlags: 1

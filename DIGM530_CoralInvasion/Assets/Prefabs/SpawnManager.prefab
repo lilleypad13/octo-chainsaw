@@ -61,8 +61,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentSpawnPoints: []
-  timeToStartSpawning: 3
-  timeBetweenSpawnAttempts: 3
+  timeToStartSpawning: 4
+  timeBetweenSpawnAttempts: 4
   spawnTimeDecrease: 2
   spawnTimeMin: 1
   spawnTimer: 0

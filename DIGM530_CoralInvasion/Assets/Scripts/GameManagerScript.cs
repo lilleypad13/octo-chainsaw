@@ -28,8 +28,7 @@ public class GameManagerScript : MonoBehaviour {
         {
             gameHasEnded = true;
             Debug.Log("You have won!");
-            //SceneManager.LoadScene(2); // Will want to bring this back once the game is further along.
-            SceneManager.LoadScene(level); // Simply resets the level when you win for now.
+            SceneManager.LoadScene(2); // Will want to bring this back once the game is further along.
         }
     }
 
@@ -64,7 +63,7 @@ public class GameManagerScript : MonoBehaviour {
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             Debug.Log("You have lost.");
         }
     }

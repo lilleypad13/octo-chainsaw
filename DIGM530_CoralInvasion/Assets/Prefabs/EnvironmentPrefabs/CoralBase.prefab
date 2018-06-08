@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growthSpeed: 0.01
   currentHealth: 0
-  maxHealth: 1000
+  maxHealth: 15
   generalEnemyDamage: 2
   generalEnemyProjDamage: 1
   winScale: 1.5
