@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha_LargerLevel_01.unity
     guid: 105ff9b7049ec374097a62dad903671e
+  - enabled: 1
+    path: Assets/Scenes/Alpha_LargerLevel_02.unity
+    guid: deb60083410169b4a920e2a23549eec6
   m_configObjects: {}
