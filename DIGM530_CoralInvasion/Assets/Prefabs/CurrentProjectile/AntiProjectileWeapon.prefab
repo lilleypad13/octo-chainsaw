@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86927537a8247164cbe9df962f09598f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growthSpeed: 1
+  growthSpeed: 2
   projectileId: 0

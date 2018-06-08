@@ -12,7 +12,9 @@ public class BaseCoral : MonoBehaviour {
     public float winScale = 2.0f;
     public float growthLostOnGeneralHit = 0.1f;
     public float growthLostOnProjHit = 0.1f;
+    public AudioClip baseDamageSound;
 
+    private AudioSource audioController;
     private Animator anim;
     private int takeDamageHash = Animator.StringToHash("TakeDamage");
 
@@ -20,6 +22,7 @@ public class BaseCoral : MonoBehaviour {
 	void Start () {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        audioController = GetComponent<AudioSource>();
 	}
 
     // The win condition for the game has been changed, so these can be disregarded for now.
@@ -40,13 +43,15 @@ public class BaseCoral : MonoBehaviour {
         if (damagingObject.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Scale of base before being hit is: " + transform.parent.localScale);
-            currentHealth -= generalEnemyDamage; // Says anytime this object collides with an object tagged "Enemy", the currentHealth of this
-            // object will be reduced by the value of generalEnemyDamage
-            //Debug.Log("The coral has " + currentHealth + " health left.");
+            currentHealth -= generalEnemyDamage;
 
-            transform.parent.localScale -= new Vector3(growthLostOnGeneralHit, growthLostOnGeneralHit, 0f); // Causes coral to shrink an amount equal to growthLostOnGeneralHit
+            // Causes coral to shrink an amount equal to growthLostOnGeneralHit
+            transform.parent.localScale -= new Vector3(growthLostOnGeneralHit, growthLostOnGeneralHit, 0f);
 
-            anim.SetTrigger(takeDamageHash); // Coral blinks upon taking damage
+            audioController.PlayOneShot(baseDamageSound, 1.0f);
+
+            // Coral blinks upon taking damage
+            anim.SetTrigger(takeDamageHash);
 
             // Sets lose condition of having the coral no longer exist (scale has dropped to or below 0, so the sprite is gone or reversed)
             if (transform.parent.localScale.x <= 0)

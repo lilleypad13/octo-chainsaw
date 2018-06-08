@@ -8,11 +8,13 @@ public class EnemyCollisions : MonoBehaviour {
     public float currentHealth;
     public float damageScalingFactor = 1.0f;
     public float overlapMultiplier = 1.0f;
-    public GameObject slowprojectile;
+    //public GameObject slowprojectile;
     public float lastProjectileHitBy;
     public int numberOfProjectiles; // Determines how many projectile colliders the enemy is currently within
     public GameObject healthBarVisual;
+    public AudioClip enemyDamageSound;
 
+    //private AudioSource audioControl;
     private Transform healthBar;
     private Vector3 startingHealthBarScale;
     private Vector3 currentHealthBarScale;
@@ -23,6 +25,7 @@ public class EnemyCollisions : MonoBehaviour {
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        //audioControl = GetComponent<AudioSource>();
 
         healthBar = gameObject.transform.GetChild(0);
         startingHealthBarScale = healthBar.localScale;
@@ -73,6 +76,8 @@ public class EnemyCollisions : MonoBehaviour {
         currentHealth -= Time.deltaTime * damageScalingFactor * damageMultiplier;
         if (currentHealth <= 0)
         {
+            AudioSource.PlayClipAtPoint(enemyDamageSound, transform.position);
+            Debug.Log("Enemy made sound " + enemyDamageSound.name);
             Destroy(transform.parent.gameObject);
         }
     }

@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerEvents : MonoBehaviour {
 
     private Animator anim;
-    private AudioSource source;
+    private AudioSource audioControl;
     //private float vollowRange = .1f;
     //private float volHighRange = 2.0f;
 
     public AudioClip SoundBurst;
+    public AudioClip playerDamageSound;
+    public AudioClip pickedUpResourceSound;
+    public AudioClip droppedOffResourceSound;
     public bool isInvincible;
     public float timeForInvincibilityFrames = 1.0f;
     public int maxHealth = 5;
@@ -32,7 +35,7 @@ public class PlayerEvents : MonoBehaviour {
 
     private void Awake()
     {
-        source = GetComponent<AudioSource>();
+        audioControl = GetComponent<AudioSource>();
     }
 
     void Start () {
@@ -59,11 +62,6 @@ public class PlayerEvents : MonoBehaviour {
         {
             reloadTimer += Time.deltaTime;
         }
-        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
-        {
-            //pressdowntimer++;
-            //Debug.Log(pressdowntimer);
-        }
         if(pressdowntimer == 5.0f)
         {
             fireslowmo = true;
@@ -75,7 +73,7 @@ public class PlayerEvents : MonoBehaviour {
             //FireRingParticle();
             anim.SetTrigger("PerformAttack");
             //float vol = Random.Range(vollowRange, volHighRange);
-            source.PlayOneShot(SoundBurst, 1f);
+            audioControl.PlayOneShot(SoundBurst, 1f);
             reloadTimer = 0f; // Resets the reloadTimer to start over
             pressdowntimer++;
             Debug.Log(pressdowntimer);
@@ -134,6 +132,7 @@ public class PlayerEvents : MonoBehaviour {
         {
             isInvincible = true;
             currentHealth--;
+            audioControl.PlayOneShot(playerDamageSound, 1f);
             anim.SetTrigger("TakeDamage");
             if (currentHealth <= 0)
             {
@@ -166,6 +165,7 @@ public class PlayerEvents : MonoBehaviour {
         {
             inventoryResource++;
             Debug.Log("Player is holding " + inventoryResource + " resources.");
+            audioControl.PlayOneShot(pickedUpResourceSound, 1f);
             Destroy(resource.gameObject);
             Debug.Log("Resource has been destroyed and collected by player.");
         }
@@ -174,10 +174,11 @@ public class PlayerEvents : MonoBehaviour {
 
     void EnteredDropoffZone(Collider2D dropoffZone)
     {
-        if (dropoffZone.gameObject.CompareTag("Dropoff"))
+        if (dropoffZone.gameObject.CompareTag("Dropoff") && inventoryResource > 0)
         {
             baseObject.GetComponentInChildren<BaseResourceManagement>().resourceStockpile += inventoryResource;
             inventoryResource = 0;
+            audioControl.PlayOneShot(droppedOffResourceSound, 1f);
         }
     }
 

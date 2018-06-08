@@ -13,6 +13,7 @@ public class DigCrystal : MonoBehaviour {
     public int numberOfProjectiles; // Determines how many projectile colliders the enemy is currently within
 
     public Transform crystaltopick;
+    public AudioClip rockBreakSound;
 
     private SpriteRenderer sr;
     private Color oldColor;
@@ -83,9 +84,9 @@ public class DigCrystal : MonoBehaviour {
             for (int i = 0; i < 3; i++)
             {
                 //Debug.Log("222222:" + transform.position);
-                Instantiate(crystaltopick, originalposition + new Vector3(i * 1.0f, i * 1.0f, 0), Quaternion.identity);
+                Instantiate(crystaltopick, originalposition + new Vector3(i * 0.5f, i * 0.5f, 0), Quaternion.identity);
             }
-
+            AudioSource.PlayClipAtPoint(rockBreakSound, transform.position);
             Destroy(transform.gameObject);
         }
     }
