@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerEvents : MonoBehaviour {
 
     private Animator anim;
-    private AudioSource source;
+    private AudioSource audioControl;
     //private float vollowRange = .1f;
     //private float volHighRange = 2.0f;
 
     public AudioClip SoundBurst;
+    public AudioClip playerDamageSound;
+    public AudioClip pickedUpResourceSound;
+    public AudioClip droppedOffResourceSound;
     public bool isInvincible;
     public float timeForInvincibilityFrames = 1.0f;
     public int maxHealth = 5;
@@ -18,13 +21,13 @@ public class PlayerEvents : MonoBehaviour {
     public float projectileDuration = 2.0f;
     public Transform projectileSpawn;
     public GameObject projectile; //what to shoot
-    public ParticleSystem projectileVisual; // Visual effects for the projectile
     public GameObject antiProjectile; // Secondary ring that serves as "empty space" behind initial circle to create a ring effect
     public float antiProjectileDelay = 1.0f;
     public float reloadTimer;
     public float timeToReload = 1.0f;
     public float speedInWaste = 500f;
     public GameObject baseObject;
+    public int inventoryMaximum = 3;
 
     private int inventoryResource;
     private float initialSpeed;
@@ -32,7 +35,7 @@ public class PlayerEvents : MonoBehaviour {
 
     private void Awake()
     {
-        source = GetComponent<AudioSource>();
+        audioControl = GetComponent<AudioSource>();
     }
 
     void Start () {
@@ -59,11 +62,6 @@ public class PlayerEvents : MonoBehaviour {
         {
             reloadTimer += Time.deltaTime;
         }
-        if (pressdowntimer < 5.0f) // Sets an amount of time where the player cannot use their weapon, to prevent mindless spamming
-        {
-            //pressdowntimer++;
-            //Debug.Log(pressdowntimer);
-        }
         if(pressdowntimer == 5.0f)
         {
             fireslowmo = true;
@@ -75,7 +73,7 @@ public class PlayerEvents : MonoBehaviour {
             //FireRingParticle();
             anim.SetTrigger("PerformAttack");
             //float vol = Random.Range(vollowRange, volHighRange);
-            source.PlayOneShot(SoundBurst, 1f);
+            audioControl.PlayOneShot(SoundBurst, 1f);
             reloadTimer = 0f; // Resets the reloadTimer to start over
             pressdowntimer++;
             Debug.Log(pressdowntimer);
@@ -102,7 +100,7 @@ public class PlayerEvents : MonoBehaviour {
     {
         Vector3 shotPosition = projectileSpawn.position;
         var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
-        var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
+        //var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
         StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
         //bullet.GetComponent<CircularSoundProjectileScript>().projectileId = projectileIdentifier; // Assigns projectileId of instantiated bullets with current projectilIdentifier
         Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed
@@ -134,6 +132,7 @@ public class PlayerEvents : MonoBehaviour {
         {
             isInvincible = true;
             currentHealth--;
+            audioControl.PlayOneShot(playerDamageSound, 1f);
             anim.SetTrigger("TakeDamage");
             if (currentHealth <= 0)
             {
@@ -162,20 +161,24 @@ public class PlayerEvents : MonoBehaviour {
 
     void PickupResource(Collider2D resource)
     {
-        if (resource.gameObject.CompareTag("ResourcePickup"))
+        if (resource.gameObject.CompareTag("ResourcePickup") && inventoryResource < inventoryMaximum)
         {
             inventoryResource++;
             Debug.Log("Player is holding " + inventoryResource + " resources.");
+            audioControl.PlayOneShot(pickedUpResourceSound, 1f);
+            Destroy(resource.gameObject);
+            Debug.Log("Resource has been destroyed and collected by player.");
         }
 
     }
 
     void EnteredDropoffZone(Collider2D dropoffZone)
     {
-        if (dropoffZone.gameObject.CompareTag("Dropoff"))
+        if (dropoffZone.gameObject.CompareTag("Dropoff") && inventoryResource > 0)
         {
             baseObject.GetComponentInChildren<BaseResourceManagement>().resourceStockpile += inventoryResource;
             inventoryResource = 0;
+            audioControl.PlayOneShot(droppedOffResourceSound, 1f);
         }
     }
 

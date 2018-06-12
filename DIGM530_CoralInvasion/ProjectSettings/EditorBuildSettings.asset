@@ -12,23 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Game_Over.unity
     guid: b0bef06293fd749fa81abaac02158791
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 8a38124468a31354a83cc0f423e2e5d6
-  - enabled: 1
-    path: Assets/Scenes/CompleteLevel1.unity
-    guid: c888f16addfc3204c86f6768c77cf68a
-  - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: 82b25a0b9fb35db41b129f37c132baee
-  - enabled: 1
-    path: Assets/Scenes/CompleteLevel2.unity
-    guid: c2ea8a26f3b6bd84787eda995841a5f4
-  - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 566bf246b24725f43bd18c0b549928a6
-  - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 101d662bfbce08b469b6ec6fd00a37b7
   - enabled: 1
-    path: Assets/Scenes/Alpha_NewGame.unity
-    guid: e681424d504ff8a47bb7e04f68ce7c71
+    path: Assets/Scenes/Alpha_LargerLevel_01.unity
+    guid: 105ff9b7049ec374097a62dad903671e
+  - enabled: 1
+    path: Assets/Scenes/Alpha_LargerLevel_02.unity
+    guid: deb60083410169b4a920e2a23549eec6
+  m_configObjects: {}

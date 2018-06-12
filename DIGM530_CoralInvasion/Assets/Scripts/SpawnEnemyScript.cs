@@ -6,6 +6,7 @@ public class SpawnEnemyScript : MonoBehaviour {
 
     public GameObject enemyObject;
     public Transform[] spawns;
+    public List<Transform> currentSpawnPoints = new List<Transform>();
 
     //[Range(0.0f, 1.0f)]
     //public float spawnRate = 0.5f; // Probability an enemy will spawn
@@ -26,31 +27,9 @@ public class SpawnEnemyScript : MonoBehaviour {
 	void Start () {
         //InvokeRepeating("SpawnEnemy", timeToStartSpawning, timeBetweenSpawnAttempts);
         spawnTimer = 0f;
-        InvokeRepeating("SpawnControl", timeToStartSpawning, timeBetweenSpawnAttempts);
-	}
-
-    private void Update()
-    {
-        SpawnRateChangerChunkUpdate();
+        //InvokeRepeating("SpawnControl", timeToStartSpawning, timeBetweenSpawnAttempts);
+        InvokeRepeating("SpawnControlAdaptive", timeToStartSpawning, timeBetweenSpawnAttempts);
     }
-
-    //void SpawnEnemy()
-    //{
-    //    count++;
-    //    if (spawnRate < 1)
-    //    {
-    //        if (count >= countToIncreaseSpawnRate)
-    //        {
-    //            spawnRate += spawnIncrease;
-    //            count = 0;
-    //        }
-    //    }
-    //    spawnRoll = Random.Range(0f, 1f);
-    //    if (spawnRoll <= spawnRate)
-    //    {
-    //        Instantiate(enemyObject, transform.position, Quaternion.identity);
-    //    }
-    //}
 
     public void SpawnControl()
     {
@@ -58,36 +37,15 @@ public class SpawnEnemyScript : MonoBehaviour {
         int index = Random.Range(0, freeSpawnPoints.Count);  // Picks a random index number between 0 and the size of the previous array (randomly selects transform from array)
         Transform selectedSpawn = freeSpawnPoints[index];
         Instantiate(enemyObject, selectedSpawn.position, selectedSpawn.rotation);  // Creates an object at the selected position
-        SpawnRateChangerChunkInvoke();
+        //SpawnRateChangerChunkInvoke();
     }
 
-    void SpawnRateChanger()
+    void SpawnControlAdaptive()
     {
-        if (timeBetweenSpawnAttempts > spawnTimeMin) // Do not want timeBetweenSpawnAttempts to go below the minimum value set
-        {
-            spawnTimer += Time.deltaTime;
-            if (spawnTimer >= timeToIncreaseSpawnRate) // This will activate after timeToIncreaseSpawnRate time has passed
-            {
-                timeBetweenSpawnAttempts -= spawnTimeDecrease; // Decreases time between spawns by value indicated, which spawns enemies more rapidly
-                spawnTimer = 0;
-            }
-        }
+        //List<Transform> freeSpawnPoints = new List<Transform>(spawns);  // Creates new array of the transform values of the list of objects dragged onto this script
+        int index = Random.Range(0, currentSpawnPoints.Count);  // Picks a random index number between 0 and the size of the previous array (randomly selects transform from array)
+        Transform selectedSpawn = currentSpawnPoints[index];
+        Instantiate(enemyObject, selectedSpawn.position, selectedSpawn.rotation);  // Creates an object at the selected position
     }
 
-    void SpawnRateChangerChunkInvoke()
-    {
-        if (spawnTimer >= timeToIncreaseSpawnRate) // This will activate after timeToIncreaseSpawnRate time has passed
-        {
-            timeBetweenSpawnAttempts -= spawnTimeDecrease; // Decreases time between spawns by value indicated, which spawns enemies more rapidly
-            spawnTimer = 0;
-        }
-    }
-
-    void SpawnRateChangerChunkUpdate()
-    {
-        if (timeBetweenSpawnAttempts > spawnTimeMin) // Do not want timeBetweenSpawnAttempts to go below the minimum value set
-        {
-            spawnTimer += Time.deltaTime;
-        }
-    }
 }

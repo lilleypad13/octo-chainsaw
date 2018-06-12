@@ -28,7 +28,7 @@ public class CircleRend : MonoBehaviour
 
     private void Update()
     {
-        print(timeStamp);
+        //print(timeStamp);
         if (Input.GetButton("Fire3") && timer == true && timeStamp == 0)
         {
 
@@ -48,7 +48,7 @@ public class CircleRend : MonoBehaviour
             particleShape.radius = xscale / 2;
             var emissionEnabled = myParticle.emission;
             emissionEnabled.enabled = true;
-            print(particleShape);
+            //print(particleShape);
             xscale = 0.0f;
             yscale = 0.0f;
             timer = false;
@@ -56,7 +56,7 @@ public class CircleRend : MonoBehaviour
             timeStamp = coolDownPeriodinSeconds;
 
         }
-        print(timeStamp);
+        //print(timeStamp);
 
         if (timer2 == false)
         {

@@ -6,10 +6,13 @@ public class Resonance : MonoBehaviour {
 
     public float projectileDuration = 2.0f;
     public GameObject projectile; //what to shoot
-    public ParticleSystem projectileVisual; // Visual effects for the projectile
+    //public ParticleSystem projectileVisual; // Visual effects for the projectile
     public GameObject antiProjectile; // Secondary ring that serves as "empty space" behind initial circle to create a ring effect
     public float antiProjectileDelay = 1.0f;
     public float timeToReactivateHitbox = 5.0f;
+
+    private AudioSource source;
+    public AudioClip SoundBurst;
 
     private BoxCollider2D hitbox;
     private SpriteRenderer spriteRenderer;
@@ -21,6 +24,7 @@ public class Resonance : MonoBehaviour {
     {
         hitbox = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
         originalColor = spriteRenderer.color;
     }
 
@@ -87,8 +91,9 @@ public class Resonance : MonoBehaviour {
     void FireRing()
     {
         Vector3 shotPosition = transform.position;
+        source.PlayOneShot(SoundBurst, 1f);
         var bullet = Instantiate(projectile, shotPosition, Quaternion.identity); // Creates a new gameObject set to the new variable of bullet
-        var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
+        //var bulletVisual = Instantiate(projectileVisual, shotPosition, Quaternion.identity); // This creates the visual effect along with the collider
         StartCoroutine(SecondaryProjectile(shotPosition)); // Fires a second projectile from the same location as the initial projectile, but it starts later
         Destroy(bullet, projectileDuration); // Removes the bullet gameObject fired after projectileDuration time has passed
         Debug.Log("Projectile fired from resonance object.");
