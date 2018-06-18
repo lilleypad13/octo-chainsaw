@@ -29,6 +29,8 @@ public class PlayerEvents : MonoBehaviour {
     public GameObject baseObject;
     public int inventoryMaximum = 3;
 
+    public GameObject[] inventoryUIVisuals;
+
     private int inventoryResource;
     private float initialSpeed;
     //public ParticleSystem projectileParticle;
@@ -81,6 +83,34 @@ public class PlayerEvents : MonoBehaviour {
             //fireslowmo = false;
         }
         anim.SetFloat("MoveSpeed", movement.magnitude);
+
+        if (inventoryResource > 0)
+        {
+            inventoryUIVisuals[0].SetActive(true);
+            if (inventoryResource > 1)
+            {
+                inventoryUIVisuals[1].SetActive(true);
+            }
+            else
+            {
+                inventoryUIVisuals[1].SetActive(false);
+                inventoryUIVisuals[2].SetActive(false);
+            }
+                if (inventoryResource > 2)
+                {
+                    inventoryUIVisuals[2].SetActive(true);
+                }
+                else
+                {
+                inventoryUIVisuals[2].SetActive(false);
+                }
+        }
+        else
+        {
+            inventoryUIVisuals[0].SetActive(false);
+            inventoryUIVisuals[1].SetActive(false);
+            inventoryUIVisuals[2].SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D coll)

@@ -620,6 +620,10 @@ MonoBehaviour:
   speedInWaste: 500
   baseObject: {fileID: 0}
   inventoryMaximum: 3
+  inventoryUIVisuals:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114575703541234942
 MonoBehaviour:
   m_ObjectHideFlags: 1
